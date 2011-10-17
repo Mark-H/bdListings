@@ -2,7 +2,7 @@
 
 ++   bdListings
 
-++   Developer:  Your Name
+++   Developer:  Mark Hamstra
 
 ++   License:    GPL GNU v2
 

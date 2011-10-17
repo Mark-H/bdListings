@@ -1,13 +1,13 @@
 +++++++++++++++++++++++++++++++++++
 ++                               ++
-++   bdListings                   ++
-++   Developer:  Your Name       ++
+++   bdListings                  ++
+++   Developer:  Mark Hamstra    ++
 ++   License:    GPL GNU v2      ++
 ++                               ++
 +++++++++++++++++++++++++++++++++++
 
 
-bdListings bdListings manages your listings
+bdListings manages your listings
 
 
 Documentation: 		http://rtfm.modx.com/display/ADDON/bdListings (coming soon)
