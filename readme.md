@@ -1,14 +1,10 @@
 +++++++++++++++++++++++++++++++++++
 
-++                               ++
+++   bdListings
 
-++   bdListings                  ++
+++   Developer:  Your Name
 
-++   Developer:  Your Name       ++
-
-++   License:    GPL GNU v2      ++
-
-++                               ++
+++   License:    GPL GNU v2
 
 +++++++++++++++++++++++++++++++++++
 
