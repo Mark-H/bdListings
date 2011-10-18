@@ -16,11 +16,7 @@ bdListings.grid.Listings = function(config) {
             xtype: 'button',
             text: _('bdlistings.create',{ what: _('bdlistings.listing') } ),
             handler: function() {
-                win = new bdListings.window.AddListing({
-                    record: {
-                        user_id: (bdListings.record) ? bdListings.record['id'] : 0
-                    }
-                });
+                win = new bdListings.window.Listing();
                 win.show();
             }
         },'->',{
@@ -83,8 +79,8 @@ bdListings.grid.Listings = function(config) {
             {name: 'subcategory_name', type: 'string'},
             {name: 'target', type: 'int'},
             {name: 'target_name', type: 'string'},
-            {name: 'createdon', type: 'string'},
-            {name: 'publisheduntil', type: 'string'},
+            {name: 'createdon', type: 'date', dateFormat: MODx.config['manager_date_format']+' '+MODx.config['manager_time_format']},
+            {name: 'publisheduntil', type: 'date', dateFormat: MODx.config['manager_date_format']+' '+MODx.config['manager_time_format']},
             {name: 'active', type: 'boolean'},
             {name: 'featured', type: 'boolean'},
             {name: 'companyname', type: 'string'},
@@ -164,12 +160,14 @@ bdListings.grid.Listings = function(config) {
 			header: _('bdlistings.createdon'),
 			dataIndex: 'createdon',
 			sortable: true,
-			width: 2
+			width: 2,
+            renderer: Ext.util.Format.dateRenderer(MODx.config['manager_date_format']+' '+MODx.config['manager_time_format'])
 		},{
 			header: _('bdlistings.publisheduntil'),
 			dataIndex: 'publisheduntil',
 			sortable: true,
 			width: 2,
+            renderer: Ext.util.Format.dateRenderer(MODx.config['manager_date_format']+' '+MODx.config['manager_time_format']),
             hidden: true
 		},{
 			header: _('bdlistings.active'),
@@ -272,27 +270,15 @@ Ext.extend(bdListings.grid.Listings,MODx.grid.Grid,{
 
         var m = [];
         m.push({
-            text: _('update')+' '+_('user'),
-            handler: function(grid, rowIndex, e) {
-                var eid = d.user_id;
-                window.location.href = '?a='+MODx.action['cbdlistings/index']+'&action=subscriber&id='+eid;
-            }
-        },{
-            text: _('bdlistings.listing.manualtransaction'),
+            text: _('bdlistings.update',{what: _('bdlistings.listing')}),
             handler: function() {
-                win = new bdListings.window.AddManualTransaction({
-                    record: {
-                        sub_id: d.sub_id,
-                        user_id: d.user_id,
-                        amount: d.product_price,
-                        period: d.product_periods + ' ' + _('bdlistings.combo.'+d.product_period)
-                    }
-                });
+                win = new bdListings.window.Listing();
+                win.setValues(d);
                 win.show();
             }
         });
 
-        m.push('-',{
+        /*m.push('-',{
             text: _('bdlistings.listing.viewtransactions'),
             handler: function() {
                 win = new bdListings.window.ViewTransactions({
@@ -361,7 +347,7 @@ Ext.extend(bdListings.grid.Listings,MODx.grid.Grid,{
                     }
                 });
             }
-        }
+        }*/
 
         if (m.length > 0) {
             this.addContextMenuItem(m);

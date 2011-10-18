@@ -1,0 +1,176 @@
+
+bdListings.window.Listing = function(config) {
+    config = config || {};
+    Ext.applyIf(config,{
+        title: _('bdlistings.listing'),
+        url: bdListings.config.connector_url,
+        closeAction: 'close',
+        autoHeight: true,
+        baseParams: {
+            action: 'mgr/listings/save'
+        },
+        fields: [{
+            xtype: 'modx-tabs',
+            autoHeight: true,
+            deferredRender: false,
+            forceLayout: true,
+            width: '98%',
+            bodyStyle: 'padding: 10px 10px 10px 10px;',
+            border: true,
+            defaults: {
+                border: false,
+                autoHeight: true,
+                bodyStyle: 'padding: 5px 8px 5px 5px;',
+                layout: 'form',
+                deferredRender: false,
+                forceLayout: true
+            },
+            items: [{
+                title: _('bdlistings.listing.details'),
+                items: [{
+                    name: 'id',
+                    xtype: 'statictextfield',
+                    fieldLabel: _('id'),
+                    width: '95%',
+                    submitValue: true
+                },{
+                    name: 'title',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.title')+'*',
+                    allowBlank: false,
+                    width: '95%'
+                },{
+                    name: 'description',
+                    fieldLabel: _('bdlistings.description'),
+                    xtype: 'textarea',
+                    height: 100,
+                    width: '95%'
+                },{
+                    name: 'keywords',
+                    fieldLabel: _('bdlistings.keywords'),
+                    xtype: 'textfield',
+                    allowNegative: false,
+                    width: '95%'
+                },{
+                    name: 'price',
+                    fieldLabel: _('bdlistings.price')+'*',
+                    xtype: 'numberfield',
+                    allowNegative: false,
+                    width: '95%',
+                    allowBlank: false
+                },{
+                    name: 'pricegroup',
+                    fieldLabel: _('bdlistings.pricegroup')+'*',
+                    xtype: 'numberfield',
+                    allowNegative: false,
+                    width: '95%',
+                    allowBlank: false
+                },{
+                    name: 'category',
+                    fieldLabel: _('bdlistings.category')+'*',
+                    xtype: 'numberfield',
+                    allowNegative: false,
+                    width: '95%',
+                    allowBlank: false
+                },{
+                    name: 'subcategory',
+                    fieldLabel: _('bdlistings.subcategory'),
+                    xtype: 'numberfield',
+                    allowNegative: false,
+                    width: '95%'
+                },{
+                    name: 'target',
+                    fieldLabel: _('bdlistings.target'),
+                    xtype: 'numberfield',
+                    allowNegative: false,
+                    width: '95%'
+                },{
+                    name: 'image',
+                    fieldLabel: _('bdlistings.image'),
+                    xtype: 'modx-combo-browser',
+                    width: '95%'
+                },{
+                    name: 'publisheduntil',
+                    fieldLabel: _('bdlistings.publisheduntil'),
+                    xtype: 'datefield'
+                },{
+                    name: 'active',
+                    fieldLabel: _('bdlistings.active'),
+                    xtype: 'checkbox'
+                },{
+                    name: 'featured',
+                    fieldLabel: _('bdlistings.featured'),
+                    xtype: 'checkbox'
+                }]
+            },{
+                title: _('bdlistings.listing.location'),
+                items: [{
+                    name: 'companyname',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.companyname')+'*',
+                    width: '95%',
+                    allowBlank: false
+                },{
+                    name: 'contactinfo',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.contactinfo'),
+                    width: '95%'
+                },{
+                    name: 'address',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.address'),
+                    width: '95%'
+                },{
+                    name: 'zip',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.zip'),
+                    width: '95%'
+                },{
+                    name: 'city',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.city'),
+                    width: '95%'
+                },{
+                    name: 'country',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.country'),
+                    width: '95%'
+                },{
+                    name: 'website',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.website'),
+                    width: '95%'
+                },{
+                    name: 'latitude',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.latitude'),
+                    width: '95%'
+                },{
+                    name: 'longitude',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.longitude'),
+                    width: '95%'
+                }]
+            }],
+            listeners: {
+                'tabchange': function() {
+                    this.fixWinHeight(this);
+                },
+                scope: this
+            }
+        }],
+        listeners: {
+            'success': function() {
+                Ext.getCmp('grid-listings').refresh();
+            }
+        }
+    });
+    bdListings.window.Listing.superclass.constructor.call(this,config);
+};
+Ext.extend(bdListings.window.Listing,MODx.Window,{
+    fixWinHeight: function(tabs) {
+        this.syncSize();
+    },
+    scope: this
+});
+Ext.reg('bdlisting-window-listings',bdListings.window.Listing);

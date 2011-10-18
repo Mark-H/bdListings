@@ -11,9 +11,12 @@ $_lang['bdlistings.structure'] = 'Structure';
 
 /* Buttons / Actions / Filters */
 $_lang['bdlistings.create'] = 'Create [[+what]]';
-$_lang['bdlistings.clearfilter'] = 'Clear Filter]';
+$_lang['bdlistings.update'] = 'Update [[+what]]';
+$_lang['bdlistings.clearfilter'] = 'Clear Filter';
 $_lang['bdlistings.filter_on'] = 'Filter on [[+what]]';
 $_lang['bdlistings.search...'] = 'Search...';
+$_lang['bdlistings.listing.details'] = 'Listing Details';
+$_lang['bdlistings.listing.location'] = 'Location &amp; Company';
 
 /* Error messages */
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';

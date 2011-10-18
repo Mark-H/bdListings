@@ -52,7 +52,8 @@ $r = $modx->getCollection('bdlListing',$c);
 foreach ($r as $listing) {
     /* @var bdlListing $listing */
     $ta = $listing->toArray('',false,true);
-
+    $ta['createdon'] = date($modx->config['manager_date_format'].' '.$modx->config['manager_time_format'],strtotime($ta['createdon']));
+    $ta['publisheduntil'] = date($modx->config['manager_date_format'].' '.$modx->config['manager_time_format'],strtotime($ta['publisheduntil']));
     $results[] = $ta;
 }
 
