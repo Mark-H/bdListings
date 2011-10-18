@@ -23,12 +23,10 @@
 */
 $xpdo_meta_map['bdlTarget']= array (
   'package' => 'bdlistings',
-  'table' => 'bdl_category',
+  'table' => 'bdl_target',
   'fields' => 
   array (
     'name' => NULL,
-    'description' => NULL,
-    'parent' => 0,
   ),
   'fieldMeta' => 
   array (
@@ -38,20 +36,6 @@ $xpdo_meta_map['bdlTarget']= array (
       'precision' => '256',
       'phptype' => 'string',
       'null' => false,
-    ),
-    'description' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'string',
-      'null' => true,
-    ),
-    'parent' => 
-    array (
-      'dbtype' => 'int',
-      'precision' => '11',
-      'phptype' => 'int',
-      'null' => true,
-      'default' => 0,
     ),
   ),
   'aggregates' => 

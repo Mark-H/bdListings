@@ -23,7 +23,7 @@
 */
 $xpdo_meta_map['bdlPriceGroup']= array (
   'package' => 'bdlistings',
-  'table' => 'bld_pricegroup',
+  'table' => 'bdl_pricegroup',
   'fields' => 
   array (
     'display' => NULL,

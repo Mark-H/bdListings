@@ -21,6 +21,7 @@
         <field key="companyname" dbtype="varchar" precision="256" phptype="string" null="false" />
         <field key="contactinfo" dbtype="varchar" precision="1024" phptype="string" null="true" />
         <field key="address" dbtype="varchar" precision="1024" phptype="string" null="true" />
+        <field key="zip" dbtype="varchar" precision="32" phptype="string" null="true" />
         <field key="city" dbtype="varchar" precision="256" phptype="string" null="true" />
         <field key="country" dbtype="varchar" precision="256" phptype="string" null="true" />
         <field key="website" dbtype="varchar" precision="1024" phptype="string" null="true" />
@@ -46,15 +47,13 @@
         <aggregate alias="ParentCategory" class="bdlCategory" local="parent" foreign="id" cardinality="one" owner="foreign" />
     </object>
 
-    <object class="bdlTarget" table="bdl_category" extends="xPDOSimpleObject">
+    <object class="bdlTarget" table="bdl_target" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="256" phptype="string" null="false" />
-        <field key="description" dbtype="text" phptype="string" null="true" />
-        <field key="parent" dbtype="int" precision="11" phptype="int" null="true" default="0" />
 
         <aggregate alias="Listings" class="bdlListing" local="id" foreign="target" cardinality="many" owner="local" />
     </object>
 
-    <object class="bdlPriceGroup" table="bld_pricegroup" extends="xPDOSimpleObject">
+    <object class="bdlPriceGroup" table="bdl_pricegroup" extends="xPDOSimpleObject">
         <field key="display" dbtype="varchar" precision="256" phptype="string" null="false" />
 
         <aggregate alias="Listings" class="bdlListing" local="id" foreign="pricegroup" cardinality="many" owner="local" />

@@ -29,7 +29,6 @@ require_once MODX_CONNECTORS_PATH.'index.php';
 $corePath = $modx->getOption('bdlistings.core_path',null,$modx->getOption('core_path').'components/bdlistings/');
 require_once $corePath.'model/bdlistings.class.php';
 $modx->bdlistings = new bdListings($modx);
-$modx->bdlistings->initialize('mgr');
 
 /* handle request */
 $path = $modx->getOption('processorsPath',$modx->bdlistings->config,$corePath.'processors/');

@@ -33,6 +33,10 @@ $modx->regClientStartupHTMLBlock('
 </script>');
 
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/bdlistings.class.js');
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/action.index.js');
+
+/* Listings */
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/grid.listings.js');
 
 return '<div id="bdlistings"></div>';
 ?>

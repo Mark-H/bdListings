@@ -10,7 +10,7 @@ Index page configuration.
 bdListings.page.Index = function(config) {
     config = config || {};
     Ext.applyIf(config,{
-        renderTo: 'realestatex',
+        renderTo: 'bdlistings',
         components: [{
             xtype: 'bdlistings-panel-header'
         },{
@@ -24,15 +24,21 @@ bdListings.page.Index = function(config) {
                 bodyStyle: 'padding: 5px 8px 5px 5px;'
             },
             items: [{
-                title: _('bdlistings.estates'),
-                items: [{
-                    xtype: 'bdlistings-grid-estates',
-                    border: false
-                }]
-            },{
                 title: _('bdlistings.listings'),
                 items: [{
                     xtype: 'bdlistings-grid-listings',
+                    border: false
+                }]
+            },{
+                title: _('bdlistings.clicks'),
+                items: [{
+                    //xtype: 'bdlistings-grid-clicks',
+                    border: false
+                }]
+            },{
+                title: _('bdlistings.structure'),
+                items: [{
+                    //xtype: 'bdlistings-panel-structure',
                     border: false
                 }]
             }]
