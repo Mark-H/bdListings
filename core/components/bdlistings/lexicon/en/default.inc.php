@@ -20,6 +20,8 @@ $_lang['bdlistings.listing.location'] = 'Location &amp; Company';
 
 /* Error messages */
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';
+$_lang['bdlistings.error.object_nf'] = 'Object not found.';
+$_lang['bdlistings.error.save'] = 'Error saving object.';
 
 /* Fields, somewhat alphabetical */
 $_lang['bdlistings.active'] = 'Active';

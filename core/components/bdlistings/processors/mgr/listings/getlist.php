@@ -13,10 +13,10 @@ $target = $modx->getOption('target',$scriptProperties,null);
 $pricegroup = $modx->getOption('pricegroup',$scriptProperties,null);
 
 $c = $modx->newQuery('bdlListing');
-$c->innerJoin('bdlCategory','Category');
-$c->innerJoin('bdlCategory','SubCategory');
-$c->innerJoin('bdlTarget','Target');
-$c->innerJoin('bdlPriceGroup','PriceGroup');
+$c->leftJoin('bdlCategory','Category');
+$c->leftJoin('bdlCategory','SubCategory');
+$c->leftJoin('bdlTarget','Target');
+$c->leftJoin('bdlPriceGroup','PriceGroup');
 $c->select(
     array(
         'bdlListing.*',

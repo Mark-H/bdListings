@@ -154,7 +154,7 @@ bdListings.window.Listing = function(config) {
             }],
             listeners: {
                 'tabchange': function() {
-                    this.fixWinHeight(this);
+                    this.syncSize();
                 },
                 scope: this
             }
@@ -167,10 +167,5 @@ bdListings.window.Listing = function(config) {
     });
     bdListings.window.Listing.superclass.constructor.call(this,config);
 };
-Ext.extend(bdListings.window.Listing,MODx.Window,{
-    fixWinHeight: function(tabs) {
-        this.syncSize();
-    },
-    scope: this
-});
+Ext.extend(bdListings.window.Listing,MODx.Window);
 Ext.reg('bdlisting-window-listings',bdListings.window.Listing);
