@@ -38,7 +38,7 @@ bdListings.grid.Listings = function(config) {
                 },scope: this}
             }
         },'-',{
-            xtype: 'textfield',
+            xtype: 'bdlisting-combo-targetgroup',
             emptyText: _('bdlistings.filter_on',{what: _('bdlistings.target')}),
             id: 'bdlistings-listings-target-filter',
             width: 200,
@@ -46,7 +46,7 @@ bdListings.grid.Listings = function(config) {
                 'select': {fn: this.filterByTarget, scope: this}
             }
         },'-',{
-            xtype: 'textfield',
+            xtype: 'bdlisting-combo-pricegroup',
             emptyText: _('bdlistings.filter_on',{what: _('bdlistings.pricegroup')}),
             id: 'bdlistings-listings-pricegroup-filter',
             width: 200,
@@ -71,7 +71,7 @@ bdListings.grid.Listings = function(config) {
             {name: 'keywords', type: 'string'},
             {name: 'price', type: 'float'},
             {name: 'pricegroup', type: 'int'},
-            {name: 'pricegroup_name', type: 'string'},
+            {name: 'pricegroup_display', type: 'string'},
             {name: 'image', type: 'string'},
             {name: 'category', type: 'int'},
             {name: 'subcategory', type: 'int'},

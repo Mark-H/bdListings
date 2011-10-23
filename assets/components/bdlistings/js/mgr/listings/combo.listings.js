@@ -33,3 +33,21 @@ bdListings.combo.TargetGroup = function(config) {
 };
 Ext.extend(bdListings.combo.TargetGroup,MODx.combo.ComboBox);
 Ext.reg('bdlisting-combo-targetgroup',bdListings.combo.TargetGroup);
+
+bdListings.combo.PriceGroup = function(config) {
+    config = config || {};
+    Ext.applyIf(config,{
+        displayField: 'display',
+        tpl: new Ext.XTemplate('<tpl for="."><div class="x-combo-list-item">{display}</div></tpl>'),
+        valueField: 'id',
+        fields: ['id','display'],
+        url: bdListings.config.connector_url,
+        baseParams: {
+            action: 'mgr/listings/getpricegroups'
+        },
+        pageSize: 10
+    });
+    bdListings.combo.PriceGroup.superclass.constructor.call(this,config);
+};
+Ext.extend(bdListings.combo.PriceGroup,MODx.combo.ComboBox);
+Ext.reg('bdlisting-combo-pricegroup',bdListings.combo.PriceGroup);

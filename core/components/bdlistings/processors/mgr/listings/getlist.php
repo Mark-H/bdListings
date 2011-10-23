@@ -40,6 +40,14 @@ if ($search) {
     if (is_numeric($search))
         $c->orCondition(array('id' => (int)$search));
 }
+if (is_numeric($target)) {
+    $target = (int)$target;
+    $c->andCondition(array('target' => $target));
+}
+if (is_numeric($pricegroup)) {
+    $pricegroup = (int)$pricegroup;
+    $c->andCondition(array('pricegroup' => $pricegroup));
+}
 
 $matches = $modx->getCount('bdlListing',$c);
 
