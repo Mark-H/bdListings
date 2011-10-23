@@ -1,6 +1,7 @@
 
 bdListings.window.Listing = function(config) {
     config = config || {};
+    this.id = Ext.id();
     Ext.applyIf(config,{
         title: _('bdlistings.listing'),
         url: bdListings.config.connector_url,
@@ -67,21 +68,35 @@ bdListings.window.Listing = function(config) {
                     allowBlank: false
                 },{
                     name: 'category',
+                    hiddenName: 'category',
                     fieldLabel: _('bdlistings.category')+'*',
-                    xtype: 'numberfield',
+                    xtype: 'bdlisting-combo-category',
                     allowNegative: false,
                     width: '95%',
-                    allowBlank: false
+                    allowBlank: false,
+                    id: 'bdl-win-'+this.id+'-category',
+                    listeners: {
+                        select: function(field, form, ri) {
+                            subParent = form.store.data.items[ri].json;
+                            console.log(this);
+                            subC = Ext.getCmp('bdl-win-'+this.id+'-subcategory');
+                            subC.store.baseParams['parent'] = subParent.id;
+                            subC.store.reload({parent: subParent.id});
+                        }, scope: this
+                    }
                 },{
                     name: 'subcategory',
+                    hiddenName: 'subcategory',
                     fieldLabel: _('bdlistings.subcategory'),
-                    xtype: 'numberfield',
+                    xtype: 'bdlisting-combo-category',
                     allowNegative: false,
-                    width: '95%'
+                    width: '95%',
+                    id: 'bdl-win-'+this.id+'-subcategory'
                 },{
                     name: 'target',
+                    hiddenName: 'target',
                     fieldLabel: _('bdlistings.target'),
-                    xtype: 'numberfield',
+                    xtype: 'bdlisting-combo-targetgroup',
                     allowNegative: false,
                     width: '95%'
                 },{
@@ -166,6 +181,7 @@ bdListings.window.Listing = function(config) {
         }
     });
     bdListings.window.Listing.superclass.constructor.call(this,config);
+    console.log(this);
 };
 Ext.extend(bdListings.window.Listing,MODx.Window);
 Ext.reg('bdlisting-window-listings',bdListings.window.Listing);
