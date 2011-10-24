@@ -21,6 +21,7 @@
         <field key="companyname" dbtype="varchar" precision="256" phptype="string" null="false" />
         <field key="contactinfo" dbtype="varchar" precision="1024" phptype="string" null="true" />
         <field key="address" dbtype="varchar" precision="1024" phptype="string" null="true" />
+        <field key="neighborhood" dbtype="varchar" precision="1024" phptype="string" null="true" />
         <field key="zip" dbtype="varchar" precision="32" phptype="string" null="true" />
         <field key="city" dbtype="varchar" precision="256" phptype="string" null="true" />
         <field key="country" dbtype="varchar" precision="256" phptype="string" null="true" />

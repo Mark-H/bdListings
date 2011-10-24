@@ -42,6 +42,7 @@ $xpdo_meta_map['bdlListing']= array (
     'companyname' => NULL,
     'contactinfo' => NULL,
     'address' => NULL,
+    'neighborhood' => NULL,
     'zip' => NULL,
     'city' => NULL,
     'country' => NULL,
@@ -160,6 +161,13 @@ $xpdo_meta_map['bdlListing']= array (
       'null' => true,
     ),
     'address' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '1024',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'neighborhood' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '1024',

@@ -136,6 +136,11 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.address'),
                     width: '95%'
                 },{
+                    name: 'neighborhood',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.neighborhood'),
+                    width: '95%'
+                },{
                     name: 'zip',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.zip'),

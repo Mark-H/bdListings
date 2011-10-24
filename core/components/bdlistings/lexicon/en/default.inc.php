@@ -46,6 +46,7 @@ $_lang['bdlistings.keywords'] = 'Keywords';
 $_lang['bdlistings.latitude'] = 'Latitude';
 $_lang['bdlistings.longitude'] = 'Longitude';
 $_lang['bdlistings.name'] = 'Name';
+$_lang['bdlistings.neighborhood'] = 'Neighborhood';
 $_lang['bdlistings.parent'] = 'Parent';
 $_lang['bdlistings.price'] = 'Price';
 $_lang['bdlistings.pricegroup'] = 'Price Group';
