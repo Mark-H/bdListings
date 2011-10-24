@@ -48,5 +48,9 @@ $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/clicks/grid.cli
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/structure/panel.structure.js');
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/structure/window.structure.js');
 
+/* Target Groups */
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/targetgroups/grid.targetgroups.js');
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/targetgroups/window.targetgroups.js');
+
 return '<div id="bdlistings"></div>';
 ?>

@@ -8,6 +8,7 @@ $_lang['bdlistings.listings'] = 'Listings';
 $_lang['bdlistings.click'] = 'Click';
 $_lang['bdlistings.clicks'] = 'Clicks';
 $_lang['bdlistings.structure'] = 'Structure';
+$_lang['bdlistings.admin'] = 'Administration';
 
 /* Buttons / Actions / Filters */
 $_lang['bdlistings.create'] = 'Create [[+what]]';
@@ -47,7 +48,6 @@ $_lang['bdlistings.display'] = 'Display as';
 $_lang['bdlistings.ipaddress'] = 'IP Address';
 $_lang['bdlistings.image'] = 'Image';
 $_lang['bdlistings.featured'] = 'Featured';
-$_lang['bdlistings.title'] = 'Title';
 $_lang['bdlistings.keywords'] = 'Keywords';
 $_lang['bdlistings.latitude'] = 'Latitude';
 $_lang['bdlistings.longitude'] = 'Longitude';
@@ -56,10 +56,13 @@ $_lang['bdlistings.neighborhood'] = 'Neighborhood';
 $_lang['bdlistings.parent'] = 'Parent';
 $_lang['bdlistings.price'] = 'Price';
 $_lang['bdlistings.pricegroup'] = 'Price Group';
+$_lang['bdlistings.pricegroups'] = 'Price Groups';
 $_lang['bdlistings.publisheduntil'] = 'Published Until';
 $_lang['bdlistings.referrer'] = 'Referring URL';
 $_lang['bdlistings.subcategory'] = 'Sub-Category';
 $_lang['bdlistings.target'] = 'Target Group';
+$_lang['bdlistings.targets'] = 'Target Groups';
+$_lang['bdlistings.title'] = 'Title';
 $_lang['bdlistings.website'] = 'Website';
 $_lang['bdlistings.zip'] = 'Zip';
 

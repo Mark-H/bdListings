@@ -39,10 +39,36 @@ bdListings.page.Index = function(config) {
                     border: false
                 }]
             },{
-                title: _('bdlistings.structure'),
+                title: _('bdlistings.admin'),
                 items: [{
-                    xtype: 'bdlistings-tree-structure',
-                    border: false
+                    xtype: 'modx-tabs',
+                    width: '98%',
+                    bodyStyle: 'padding: 10px 10px 10px 10px;',
+                    border: true,
+                    defaults: {
+                        border: false,
+                        autoHeight: true,
+                        bodyStyle: 'padding: 5px 8px 5px 5px;'
+                    },
+                    items: [{
+                        title: _('bdlistings.structure'),
+                        items: [{
+                            xtype: 'bdlistings-tree-structure',
+                            border: false
+                        }]
+                    },{
+                        title: _('bdlistings.targets'),
+                        items: [{
+                            xtype: 'bdlistings-grid-targetgroups',
+                            border: false
+                        }]
+                    },{
+                        title: _('bdlistings.pricegroups'),
+                        items: [{
+                            //xtype: 'bdlistings-grid-pricegroup',
+                            border: false
+                        }]
+                    }]
                 }]
             }]
         }]
