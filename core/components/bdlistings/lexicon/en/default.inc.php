@@ -17,6 +17,9 @@ $_lang['bdlistings.filter_on'] = 'Filter on [[+what]]';
 $_lang['bdlistings.search...'] = 'Search...';
 $_lang['bdlistings.listing.details'] = 'Listing Details';
 $_lang['bdlistings.listing.location'] = 'Location &amp; Company';
+$_lang['bdlistings.date.start'] = 'Date From';
+$_lang['bdlistings.date.end'] = 'Date End';
+$_lang['bdlistings.date.steps'] = '# of Steps';
 
 /* Error messages */
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';

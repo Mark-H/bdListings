@@ -35,7 +35,7 @@ bdListings.page.Index = function(config) {
                     xtype: 'bdlistings-panel-clicks',
                     border: false
                 },{
-                    //xtype: 'bdlistings-grid-clicks',
+                    xtype: 'bdlistings-grid-clicks',
                     border: false
                 }]
             },{

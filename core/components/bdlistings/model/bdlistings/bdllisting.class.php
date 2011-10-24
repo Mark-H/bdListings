@@ -21,16 +21,5 @@
  * Suite 330, Boston, MA 02111-1307 USA
  *
 */
-class bdlListing extends xPDOSimpleObject {
-    /**
-     * To do: Gets lat/long values from Google Analytics.
-     *
-     * @final false
-     * @return bool
-     */
-    function getLatLong () {
-        // @todo Add logic to fetch lat+long from Google Analytics
-        return true;
-    }
-}
+class bdlListing extends xPDOSimpleObject {}
 ?>

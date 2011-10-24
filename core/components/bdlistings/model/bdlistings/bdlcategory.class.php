@@ -21,13 +21,5 @@
  * Suite 330, Boston, MA 02111-1307 USA
  *
 */
-class bdlCategory extends xPDOSimpleObject {
-    /**
-     * Checks if a category is a parent or not.
-     * @return bool
-     */
-    public function isParent() {
-        return ($this->get('parent') > 0) ? true : false;
-    }
-}
+class bdlCategory extends xPDOSimpleObject {}
 ?>

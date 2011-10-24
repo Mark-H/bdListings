@@ -65,7 +65,7 @@
         <field key="ipaddress" dbtype="varchar" precision="128" phptype="string" null="false" default="127.0.0.1" />
         <field key="referrer" dbtype="varchar" precision="512" phptype="string" null="false" default="- no referer available -" />
 
-        <aggregate alias="Listings" class="bdlListing" local="listing" foreign="id" cardinality="many" owner="foreign" />
+        <aggregate alias="Listing" class="bdlListing" local="listing" foreign="id" cardinality="one" owner="foreign" />
     </object>
 </model>
 

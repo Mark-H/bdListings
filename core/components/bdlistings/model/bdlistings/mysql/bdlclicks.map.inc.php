@@ -66,12 +66,12 @@ $xpdo_meta_map['bdlClicks']= array (
   ),
   'aggregates' => 
   array (
-    'Listings' => 
+    'Listing' => 
     array (
       'class' => 'bdlListing',
       'local' => 'listing',
       'foreign' => 'id',
-      'cardinality' => 'many',
+      'cardinality' => 'one',
       'owner' => 'foreign',
     ),
   ),

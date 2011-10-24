@@ -1,3 +1,23 @@
+bdListings.combo.Listing = function(config) {
+    config = config || {};
+    Ext.applyIf(config,{
+        displayField: 'title',
+        tpl: new Ext.XTemplate('<tpl for="."><div class="x-combo-list-item">{title}</div></tpl>'),
+        valueField: 'id',
+        fields: ['id','title'],
+        url: bdListings.config.connector_url,
+        baseParams: {
+            action: 'mgr/listings/getcombo'
+        },
+        pageSize: 10,
+        typeAhead: true,
+        minChars: 1
+    });
+    bdListings.combo.Listing.superclass.constructor.call(this,config);
+};
+Ext.extend(bdListings.combo.Listing,MODx.combo.ComboBox);
+Ext.reg('bdlisting-combo-listing',bdListings.combo.Listing);
+
 bdListings.combo.Category = function(config) {
     config = config || {};
     Ext.applyIf(config,{
