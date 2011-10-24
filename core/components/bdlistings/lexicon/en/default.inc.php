@@ -11,6 +11,7 @@ $_lang['bdlistings.structure'] = 'Structure';
 
 /* Buttons / Actions / Filters */
 $_lang['bdlistings.create'] = 'Create [[+what]]';
+$_lang['bdlistings.create_here'] = 'Create [[+what]] Here';
 $_lang['bdlistings.update'] = 'Update [[+what]]';
 $_lang['bdlistings.remove'] = 'Remove [[+what]]';
 $_lang['bdlistings.clearfilter'] = 'Clear Filter';
@@ -21,6 +22,8 @@ $_lang['bdlistings.listing.location'] = 'Location &amp; Company';
 $_lang['bdlistings.date.start'] = 'Date From';
 $_lang['bdlistings.date.end'] = 'Date End';
 $_lang['bdlistings.date.steps'] = '# of Steps';
+$_lang['bdlistings.remove.confirm'] = 'Remove [[+what]]?';
+$_lang['bdlistings.remove.confirm.text'] = 'Are you sure you want to remove this [[+what]]? This can not be undone.';
 
 /* Error messages */
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';
@@ -32,6 +35,7 @@ $_lang['bdlistings.error.remove'] = 'Error removing object.';
 $_lang['bdlistings.active'] = 'Active';
 $_lang['bdlistings.address'] = 'Address';
 $_lang['bdlistings.category'] = 'Category';
+$_lang['bdlistings.categories'] = 'Categories';
 $_lang['bdlistings.city'] = 'City';
 $_lang['bdlistings.clicktime'] = 'Time Clicked';
 $_lang['bdlistings.companyname'] = 'Company Name';

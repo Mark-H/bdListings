@@ -42,10 +42,17 @@ bdListings.window.Listing = function(config) {
                     width: '95%'
                 },{
                     name: 'description',
+                    hiddenName: 'description',
                     fieldLabel: _('bdlistings.description'),
-                    xtype: 'textarea',
-                    height: 100,
-                    width: '95%'
+                    xtype: 'htmleditor',
+                    allowBlank: true,
+                    enableFont: false,
+                    enableFontSize: false,
+                    enableLinks: true,
+                    enableColors: false,
+                    enableAlignment: false,
+                    width: '95%',
+                    height: 150
                 },{
                     name: 'keywords',
                     fieldLabel: _('bdlistings.keywords'),

@@ -41,7 +41,7 @@ bdListings.page.Index = function(config) {
             },{
                 title: _('bdlistings.structure'),
                 items: [{
-                    //xtype: 'bdlistings-panel-structure',
+                    xtype: 'bdlistings-tree-structure',
                     border: false
                 }]
             }]
