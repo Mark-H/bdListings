@@ -40,5 +40,8 @@ $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/grid.l
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/window.listings.js');
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/combo.listings.js');
 
+/* Clicks */
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/clicks/panel.clicks.js');
+
 return '<div id="bdlistings"></div>';
 ?>

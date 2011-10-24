@@ -32,6 +32,9 @@ bdListings.page.Index = function(config) {
             },{
                 title: _('bdlistings.clicks'),
                 items: [{
+                    xtype: 'bdlistings-panel-clicks',
+                    border: false
+                },{
                     //xtype: 'bdlistings-grid-clicks',
                     border: false
                 }]
