@@ -20,9 +20,6 @@ while ($period > 0) {
         )
     );
     $count = $modx->getCount('bdlClicks',$c);
-    $c->construct();
-    $sql = $c->toSQL();
-    $modx->log(modX::LOG_LEVEL_ERROR,$sql);
     $results[] = array(
         'period' => date($modx->config['manager_date_format'],$end),
         'clicks' => $count
