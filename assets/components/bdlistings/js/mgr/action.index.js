@@ -65,7 +65,7 @@ bdListings.page.Index = function(config) {
                     },{
                         title: _('bdlistings.pricegroups'),
                         items: [{
-                            //xtype: 'bdlistings-grid-pricegroup',
+                            xtype: 'bdlistings-grid-pricegroups',
                             border: false
                         }]
                     }]
