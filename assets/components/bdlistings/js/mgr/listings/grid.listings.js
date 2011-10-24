@@ -278,10 +278,28 @@ Ext.extend(bdListings.grid.Listings,MODx.grid.Grid,{
         var m = [];
         m.push({
             text: _('bdlistings.update',{what: _('bdlistings.listing')}),
-            handler: function() {
+            handler: function () {
                 win = new bdListings.window.Listing();
                 win.setValues(d);
                 win.show();
+            }
+        },'-',{
+            text: _('bdlistings.remove',{what: _('bdlistings.listing')}),
+            handler: function () {
+                MODx.msg.confirm({
+                    title: _('bdlistings.remove',{what: _('bdlistings.listing')}),
+                    text: _('confirm_remove'),
+                    url: bdListings.config.connector_url,
+                    params: {
+                        action: 'mgr/listings/remove',
+                        id: d['id']
+                    },
+                    listeners: {
+                        'success': { fn:function (r) {
+                            Ext.getCmp('grid-listings').refresh();
+                        }, scope: true}
+                    }
+                });
             }
         });
 

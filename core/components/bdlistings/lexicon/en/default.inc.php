@@ -12,6 +12,7 @@ $_lang['bdlistings.structure'] = 'Structure';
 /* Buttons / Actions / Filters */
 $_lang['bdlistings.create'] = 'Create [[+what]]';
 $_lang['bdlistings.update'] = 'Update [[+what]]';
+$_lang['bdlistings.remove'] = 'Remove [[+what]]';
 $_lang['bdlistings.clearfilter'] = 'Clear Filter';
 $_lang['bdlistings.filter_on'] = 'Filter on [[+what]]';
 $_lang['bdlistings.search...'] = 'Search...';
@@ -25,6 +26,7 @@ $_lang['bdlistings.date.steps'] = '# of Steps';
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';
 $_lang['bdlistings.error.object_nf'] = 'Object not found.';
 $_lang['bdlistings.error.save'] = 'Error saving object.';
+$_lang['bdlistings.error.remove'] = 'Error removing object.';
 
 /* Fields, somewhat alphabetical */
 $_lang['bdlistings.active'] = 'Active';
