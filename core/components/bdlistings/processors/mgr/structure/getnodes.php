@@ -13,7 +13,7 @@ if ($node == 'root') {
         if ($category instanceof bdlCategory) {
             $tr = $category->toArray();
             $return[] = array (
-                'text' => $tr['name'],
+                'text' => $tr['name'] . ' (' . $tr['id'] . ')',
                 'id' => $tr['id'],
                 'leaf' => ($modx->getCount('bdlCategory',array('parent' => $tr['id'])) > 0) ? false : true,
                 'type' => 'category',
@@ -33,7 +33,7 @@ else {
             if ($category instanceof bdlCategory) {
                 $tr = $category->toArray();
                 $return[] = array (
-                    'text' => $tr['name'],
+                    'text' => $tr['name'] . ' (' . $tr['id'] . ')',
                     'id' => $tr['id'],
                     'leaf' => ($modx->getCount('bdlCategory',array('parent' => $tr['id'])) > 0) ? false : true,
                     'type' => 'subcategory',
