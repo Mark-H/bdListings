@@ -52,7 +52,7 @@ bdListings.window.Listing = function(config) {
                     enableColors: false,
                     enableAlignment: false,
                     width: '95%',
-                    height: 150
+                    height: 125
                 },{
                     name: 'keywords',
                     fieldLabel: _('bdlistings.keywords'),
@@ -167,6 +167,10 @@ bdListings.window.Listing = function(config) {
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.website'),
                     width: '95%'
+                },{
+                    name: 'calclatlong',
+                    xtype: 'checkbox',
+                    fieldLabel: _('bdlistings.calclatlong')
                 },{
                     name: 'latitude',
                     xtype: 'textfield',

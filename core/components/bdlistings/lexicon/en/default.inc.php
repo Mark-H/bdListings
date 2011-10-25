@@ -25,6 +25,7 @@ $_lang['bdlistings.date.end'] = 'Date End';
 $_lang['bdlistings.date.steps'] = '# of Steps';
 $_lang['bdlistings.remove.confirm'] = 'Remove [[+what]]?';
 $_lang['bdlistings.remove.confirm.text'] = 'Are you sure you want to remove this [[+what]]? This can not be undone.';
+$_lang['bdlistings.calclatlong'] = 'Calculate Lat/Long';
 
 /* Error messages */
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';
