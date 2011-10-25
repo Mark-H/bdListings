@@ -10,6 +10,7 @@ bdListings.window.Listing = function(config) {
         baseParams: {
             action: 'mgr/listings/save'
         },
+        width: 600,
         fields: [{
             xtype: 'modx-tabs',
             autoHeight: true,
@@ -54,58 +55,12 @@ bdListings.window.Listing = function(config) {
                     width: '95%',
                     height: 125
                 },{
-                    name: 'keywords',
-                    fieldLabel: _('bdlistings.keywords'),
-                    xtype: 'textfield',
-                    allowNegative: false,
-                    width: '95%'
-                },{
                     name: 'price',
                     fieldLabel: _('bdlistings.price')+'*',
                     xtype: 'numberfield',
                     allowNegative: false,
                     width: '95%',
                     allowBlank: false
-                },{
-                    name: 'pricegroup',
-                    fieldLabel: _('bdlistings.pricegroup')+'*',
-                    xtype: 'numberfield',
-                    allowNegative: false,
-                    width: '95%',
-                    allowBlank: false
-                },{
-                    name: 'category',
-                    hiddenName: 'category',
-                    fieldLabel: _('bdlistings.category')+'*',
-                    xtype: 'bdlisting-combo-category',
-                    allowNegative: false,
-                    width: '95%',
-                    allowBlank: false,
-                    id: 'bdl-win-'+this.id+'-category',
-                    listeners: {
-                        select: function(field, form, ri) {
-                            subParent = form.store.data.items[ri].json;
-                            console.log(this);
-                            subC = Ext.getCmp('bdl-win-'+this.id+'-subcategory');
-                            subC.store.baseParams['parent'] = subParent.id;
-                            subC.store.reload({parent: subParent.id});
-                        }, scope: this
-                    }
-                },{
-                    name: 'subcategory',
-                    hiddenName: 'subcategory',
-                    fieldLabel: _('bdlistings.subcategory'),
-                    xtype: 'bdlisting-combo-category',
-                    allowNegative: false,
-                    width: '95%',
-                    id: 'bdl-win-'+this.id+'-subcategory'
-                },{
-                    name: 'target',
-                    hiddenName: 'target',
-                    fieldLabel: _('bdlistings.target'),
-                    xtype: 'bdlisting-combo-targetgroup',
-                    allowNegative: false,
-                    width: '95%'
                 },{
                     name: 'image',
                     fieldLabel: _('bdlistings.image'),
@@ -123,6 +78,62 @@ bdListings.window.Listing = function(config) {
                     name: 'featured',
                     fieldLabel: _('bdlistings.featured'),
                     xtype: 'checkbox'
+                }]
+            },{
+                title: _('bdlistings.listing.categorize'),
+                items: [{
+                    name: 'keywords',
+                    fieldLabel: _('bdlistings.keywords'),
+                    xtype: 'textfield',
+                    allowNegative: false,
+                    width: '95%'
+                },{
+                    name: 'pricegroup',
+                    fieldLabel: _('bdlistings.pricegroup')+'*',
+                    xtype: 'bdlisting-combo-pricegroup',
+                    allowNegative: false,
+                    width: '95%',
+                    allowBlank: false
+                },{
+                    name: 'category',
+                    hiddenName: 'category',
+                    fieldLabel: _('bdlistings.category')+'*',
+                    xtype: 'bdlisting-combo-category',
+                    allowNegative: false,
+                    width: '95%',
+                    allowBlank: false,
+                    id: 'bdl-win-'+this.id+'-category',
+                    listeners: {
+                        select: function(field, form, ri) {
+                            subParent = form.store.data.items[ri].json;
+                            subC = Ext.getCmp('bdl-win-'+this.id+'-subcategory');
+                            subC.store.baseParams['parent'] = subParent.id;
+                            subC.store.reload({parent: subParent.id});
+                        }, scope: this
+                    }
+                },{
+                    name: 'subcategory',
+                    hiddenName: 'subcategory',
+                    fieldLabel: _('bdlistings.subcategory'),
+                    xtype: 'bdlisting-combo-category',
+                    allowNegative: false,
+                    width: '95%',
+                    id: 'bdl-win-'+this.id+'-subcategory',
+                    listeners: {
+                        render: function(field, form, ri) {
+                            parCat =  Ext.getCmp('bdl-win-'+this.id+'-category');
+                            if (typeof parCat != 'undefined') {
+                                Ext.getCmp('bdl-win-'+this.id+'-subcategory').store.reload({parent: parCat.value});
+                            }
+                        }, scope: this
+                    }
+                },{
+                    name: 'target',
+                    hiddenName: 'target',
+                    fieldLabel: _('bdlistings.target'),
+                    xtype: 'bdlisting-combo-targetgroup',
+                    allowNegative: false,
+                    width: '95%'
                 }]
             },{
                 title: _('bdlistings.listing.location'),
@@ -197,7 +208,6 @@ bdListings.window.Listing = function(config) {
         }
     });
     bdListings.window.Listing.superclass.constructor.call(this,config);
-    console.log(this);
 };
 Ext.extend(bdListings.window.Listing,MODx.Window);
 Ext.reg('bdlisting-window-listings',bdListings.window.Listing);

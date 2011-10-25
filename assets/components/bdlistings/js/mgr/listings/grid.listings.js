@@ -17,6 +17,7 @@ bdListings.grid.Listings = function(config) {
             text: _('bdlistings.create',{ what: _('bdlistings.listing') } ),
             handler: function() {
                 win = new bdListings.window.Listing();
+                win.setValues({calclatlong: true});
                 win.show();
             }
         },'->',{

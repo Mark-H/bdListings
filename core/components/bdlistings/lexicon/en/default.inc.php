@@ -20,12 +20,13 @@ $_lang['bdlistings.filter_on'] = 'Filter on [[+what]]';
 $_lang['bdlistings.search...'] = 'Search...';
 $_lang['bdlistings.listing.details'] = 'Listing Details';
 $_lang['bdlistings.listing.location'] = 'Location &amp; Company';
+$_lang['bdlistings.listing.categorize'] = 'Categorization';
 $_lang['bdlistings.date.start'] = 'Date From';
 $_lang['bdlistings.date.end'] = 'Date End';
 $_lang['bdlistings.date.steps'] = '# of Steps';
 $_lang['bdlistings.remove.confirm'] = 'Remove [[+what]]?';
 $_lang['bdlistings.remove.confirm.text'] = 'Are you sure you want to remove this [[+what]]? This can not be undone.';
-$_lang['bdlistings.calclatlong'] = 'Calculate Lat/Long';
+$_lang['bdlistings.calclatlong'] = 'Find Lat/Long';
 
 /* Error messages */
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';
@@ -40,7 +41,7 @@ $_lang['bdlistings.category'] = 'Category';
 $_lang['bdlistings.categories'] = 'Categories';
 $_lang['bdlistings.city'] = 'City';
 $_lang['bdlistings.clicktime'] = 'Time Clicked';
-$_lang['bdlistings.companyname'] = 'Company Name';
+$_lang['bdlistings.companyname'] = 'Company';
 $_lang['bdlistings.contactinfo'] = 'Contact Info';
 $_lang['bdlistings.country'] = 'Country';
 $_lang['bdlistings.createdon'] = 'Created On';
