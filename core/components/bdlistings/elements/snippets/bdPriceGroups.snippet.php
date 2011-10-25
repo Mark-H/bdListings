@@ -6,17 +6,17 @@
 $corePath = $modx->getOption('bdlistings.core_path',null,$modx->getOption('core_path').'components/bdlistings/');
 $modx->getService('bdlistings','bdListings',$corePath.'model/');
 
-$defaults = include $corePath.'elements/snippets/bdTargets.properties.php';
+$defaults = include $corePath.'elements/snippets/bdPriceGroups.properties.php';
 
 $p = array_merge($defaults,$scriptProperties);
 
-$c = $modx->newQuery('bdlTarget');
+$c = $modx->newQuery('bdlPriceGroup');
 $c->limit($p['limit'],$p['start']);
 $c->sortby($p['sortby'],$p['sortdir']);
 
 $results = array();
-$collection = $modx->getCollection('bdlTarget',$c);
-/* @var bdlTarget $target
+$collection = $modx->getCollection('bdlPriceGroup',$c);
+/* @var bdlPriceGroup $target
  **/
 foreach ($collection as $target) {
     $ta = $target->toArray();

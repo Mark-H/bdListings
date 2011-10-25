@@ -1,3 +1,3 @@
-<h3>[[+name]]</h3>
+<h3>[[+name]] ([[+clicks]] clicks)</h3>
 <p>[[+description]]</p>
 [[+subcategories]]

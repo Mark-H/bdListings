@@ -44,10 +44,11 @@ foreach ($collection as $category) {
     } else {
         $ta['subcategories'] = '';
     }
+    $ta['clicks'] = $modx->getCount('bdlClicks',array('listing' => $ta['id']));
     $results[] = $modx->bdlistings->getChunk($p['tplCategory'],$ta);
 }
 
 $results = implode($p['categorySeparator'],$results);
-$results = $modx->bdlistings->getChunk($p['tplOuter'],array('categories' => $results));
+$results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results));
 
 return $results;
