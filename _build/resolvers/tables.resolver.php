@@ -32,7 +32,7 @@ if ($object->xpdo) {
     $manager = $modx->getManager();
 
     $objects = array(
-        'object','object2'
+        'bdlListing','bdlCategory','bdlTarget','bdlPriceGroup','bdlClicks'
     );
 
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
