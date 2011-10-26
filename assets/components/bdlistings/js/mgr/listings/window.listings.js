@@ -65,7 +65,8 @@ bdListings.window.Listing = function(config) {
                     name: 'image',
                     fieldLabel: _('bdlistings.image'),
                     xtype: 'modx-combo-browser',
-                    width: '95%'
+                    width: '95%',
+                    hideFiles: true
                 },{
                     name: 'publisheduntil',
                     fieldLabel: _('bdlistings.publisheduntil'),
@@ -89,9 +90,9 @@ bdListings.window.Listing = function(config) {
                     width: '95%'
                 },{
                     name: 'pricegroup',
+                    hiddenName: 'pricegroup',
                     fieldLabel: _('bdlistings.pricegroup')+'*',
                     xtype: 'bdlisting-combo-pricegroup',
-                    allowNegative: false,
                     width: '95%',
                     allowBlank: false
                 },{
