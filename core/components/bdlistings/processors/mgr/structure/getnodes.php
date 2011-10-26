@@ -44,11 +44,6 @@ else {
     }
 }
 
-if (count($return) > 0) {
-    return $modx->toJSON($return);
-}
-else {
-    return $modx->error->failure('Not found.');
-}
+return $modx->toJSON($return);
 
 ?>
