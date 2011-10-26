@@ -1,6 +1,9 @@
-<?
+<?php
 $snips = array(
-
+    'bdCategories' => 'Generates list of categories and optionally sub-categories.',
+    'bdListings' => 'Used for creating an overview of listings.',
+    'bdPriceGroups' => 'Lists price groups as defined in the component.',
+    'bdTargets' => 'Lists target groups as defined in the component.',
 );
 
 $snippets = array();
