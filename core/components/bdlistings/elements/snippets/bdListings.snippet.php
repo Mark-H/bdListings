@@ -9,9 +9,11 @@ $modx->getService('bdlistings','bdListings',$corePath.'model/');
 $defaults = include $corePath.'elements/snippets/bdListings.properties.php';
 
 $p = array_merge($defaults,$scriptProperties);
-$p['acceptedUrlParams'] = (is_array($p['acceptedUrlParams'])) ? $p['acceptedUrlParams'] : explode(',',$p['acceptedUrlParams']);
-foreach ($p['acceptedUrlParams'] as $param) {
-    if (!empty($_REQUEST[$param])) $p[$param] = $_REQUEST[$param];
+if ($p['acceptUrlParams']) {
+    $p['acceptedUrlParams'] = (is_array($p['acceptedUrlParams'])) ? $p['acceptedUrlParams'] : explode(',',$p['acceptedUrlParams']);
+    foreach ($p['acceptedUrlParams'] as $param) {
+        if (!empty($_REQUEST[$param])) $p[$param] = $_REQUEST[$param];
+    }
 }
 
 $c = $modx->newQuery('bdlListing');

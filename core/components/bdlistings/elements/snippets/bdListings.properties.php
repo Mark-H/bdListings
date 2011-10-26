@@ -11,7 +11,7 @@ return array(
     'where' => '',
     'acceptUrlParams' => true,
     'acceptedUrlParams' => array(
-        'query','keyword','target','pricegroup','city','category','subcategory'
+        'query','keyword','target','pricegroup','city','category','subcategory','sortby','sortdir'
     ),
     'query' => '',
     'keyword' => '',
