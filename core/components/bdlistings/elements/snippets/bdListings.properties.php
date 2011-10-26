@@ -26,9 +26,9 @@ return array(
     'staticMapZoom' => 12,
     'staticMapType' => 'hybrid',
     'staticMapMarkerColor' => 'red',
-    'staticMapMarkerLabel' => 'A',
+    'staticMapMarkerLabel' => 'A', // Text on the marker (only 1 upper char / number)
     'staticMapMarkerSize' => 'medium', //tiny|mid|small|medium
-    'staticMapMarkerIcon' => 'http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600',
+    'staticMapMarkerIcon' => '', // Example: http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600
     'staticMapMarkerIconShadow' => 'true',
 
     'rowSeparator' => "\n",

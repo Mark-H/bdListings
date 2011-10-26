@@ -68,9 +68,6 @@ if ($p['subcategory'] > 0) $c->where(array('subcategory' => $p['subcategory']));
 $c->limit($p['limit'],$p['start']);
 $c->sortby($p['sortby'],$p['sortdir']);
 
-$c->construct();
-echo $c->toSQL();
-
 $staticmap = 'http://maps.googleapis.com/maps/api/staticmap?sensor=false';
 
 $results = array();
