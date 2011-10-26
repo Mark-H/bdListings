@@ -44,7 +44,6 @@ foreach ($collection as $category) {
     } else {
         $ta['subcategories'] = '';
     }
-    $ta['clicks'] = $modx->getCount('bdlClicks',array('listing' => $ta['id']));
     $results[] = $modx->bdlistings->getChunk($p['tplCategory'],$ta);
 }
 
