@@ -79,20 +79,27 @@ foreach ($collection as $listing) {
     $ta = $listing->toArray('',false,true);
     $ta['clicks'] = $modx->getCount('bdlClicks',array('listing' => $ta['id']));
 
-    $stm = '';
-    $stm .= '&center='.$ta['latitude'].','.$ta['longitude'];
-    $stm .= '&zoom='.$p['staticMapZoom'];
-    $stm .= '&size='.$p['staticMapWidth'].'x'.$p['staticMapHeight'];
+    if ($ta['latitude'] && $ta['longitude']) {
+        $stm = '';
+        $stm .= '&center='.$ta['latitude'].','.$ta['longitude'];
+        $stm .= '&zoom='.$p['staticMapZoom'];
+        $stm .= '&size='.$p['staticMapWidth'].'x'.$p['staticMapHeight'];
 
-    $marker = '';
-    if (!empty($p['staticMapMarkerIcon'])) {
-        $marker .= 'icon:'.$p['staticMapMarkerIcon'].'|shadow:'.$p['staticMapMarkerIconShadow'].'|';
+        $marker = '';
+        if (!empty($p['staticMapMarkerIcon'])) {
+            $marker .= 'icon:'.$p['staticMapMarkerIcon'].'|shadow:'.$p['staticMapMarkerIconShadow'].'|';
+        } else {
+            $marker .= 'color:'.$p['staticMapMarkerColor'].'|size:'.$p['staticMapMarkerSize'].'|label:'.$p['staticMapMarkerLabel'].'|';
+        }
+        $marker .= $ta['latitude'].','.$ta['longitude'];
+        $stm .= '&markers='.urlencode($marker);
+        $ta['googlemap_static'] = $staticmap.$stm;
+        $ta['googlemap_url'] = 'http://maps.google.com/maps?q='.$ta['latitude'].','.$ta['longitude'];
     } else {
-        $marker .= 'color:'.$p['staticMapMarkerColor'].'|size:'.$p['staticMapMarkerSize'].'|label:'.$p['staticMapMarkerLabel'].'|';
+        /* By setting them as empty, the placeholders will still be set so you can use output filters */
+        $ta['googlemap_static'] = '';
+        $ta['googlemap_url'] = '';
     }
-    $marker .= $ta['latitude'].','.$ta['longitude'];
-    $stm .= '&markers='.urlencode($marker);
-    $ta['googlemap_static'] = $staticmap.$stm;
 
     $results[] = $modx->bdlistings->getChunk($p['tplRow'],$ta);
 }
