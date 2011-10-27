@@ -13,6 +13,7 @@ bdListings.window.Listing = function(config) {
         width: 600,
         fields: [{
             xtype: 'modx-tabs',
+            hideMode: 'offsets',
             autoHeight: true,
             deferredRender: false,
             forceLayout: true,
@@ -29,18 +30,26 @@ bdListings.window.Listing = function(config) {
             },
             items: [{
                 title: _('bdlistings.listing.details'),
+                layout: 'form',
                 items: [{
                     name: 'id',
                     xtype: 'statictextfield',
                     fieldLabel: _('id'),
-                    width: '95%',
+                    width: '98%',
                     submitValue: true
                 },{
                     name: 'title',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.title')+'*',
                     allowBlank: false,
-                    width: '95%'
+                    width: '98%'
+                },{
+                    name: 'price',
+                    fieldLabel: _('bdlistings.price')+'*',
+                    xtype: 'numberfield',
+                    allowNegative: false,
+                    width: '98%',
+                    allowBlank: false
                 },{
                     name: 'description',
                     hiddenName: 'description',
@@ -52,25 +61,20 @@ bdListings.window.Listing = function(config) {
                     enableLinks: true,
                     enableColors: false,
                     enableAlignment: false,
-                    width: '95%',
+                    width: '99%',
                     height: 125
-                },{
-                    name: 'price',
-                    fieldLabel: _('bdlistings.price')+'*',
-                    xtype: 'numberfield',
-                    allowNegative: false,
-                    width: '95%',
-                    allowBlank: false
                 },{
                     name: 'image',
                     fieldLabel: _('bdlistings.image'),
                     xtype: 'modx-combo-browser',
                     width: '95%',
-                    hideFiles: true
+                    hideFiles: true,
+                    anchor: '0 0'
                 },{
                     name: 'publisheduntil',
                     fieldLabel: _('bdlistings.publisheduntil'),
-                    xtype: 'datefield'
+                    xtype: 'datefield',
+                    anchor: '0 0'
                 },{
                     name: 'active',
                     fieldLabel: _('bdlistings.active'),
@@ -82,18 +86,14 @@ bdListings.window.Listing = function(config) {
                 }]
             },{
                 title: _('bdlistings.listing.categorize'),
+                layout: 'form',
                 items: [{
-                    name: 'keywords',
-                    fieldLabel: _('bdlistings.keywords'),
-                    xtype: 'textfield',
-                    allowNegative: false,
-                    width: '95%'
-                },{
                     name: 'pricegroup',
                     hiddenName: 'pricegroup',
                     fieldLabel: _('bdlistings.pricegroup')+'*',
                     xtype: 'bdlisting-combo-pricegroup',
-                    width: '95%',
+                    width: '92%',
+                    anchor: '0 0',
                     allowBlank: false
                 },{
                     name: 'category',
@@ -101,7 +101,8 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.category')+'*',
                     xtype: 'bdlisting-combo-category',
                     allowNegative: false,
-                    width: '95%',
+                    width: '92%',
+                    anchor: '0 0',
                     allowBlank: false,
                     id: 'bdl-win-'+this.id+'-category',
                     listeners: {
@@ -118,7 +119,8 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.subcategory'),
                     xtype: 'bdlisting-combo-category',
                     allowNegative: false,
-                    width: '95%',
+                    width: '92%',
+                    anchor: '0 0',
                     id: 'bdl-win-'+this.id+'-subcategory',
                     listeners: {
                         render: function(field, form, ri) {
@@ -134,51 +136,59 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.target'),
                     xtype: 'bdlisting-combo-targetgroup',
                     allowNegative: false,
-                    width: '95%'
+                    width: '92%',
+                    anchor: '0 0'
+                },{
+                    name: 'keywords',
+                    fieldLabel: _('bdlistings.keywords'),
+                    xtype: 'textfield',
+                    allowNegative: false,
+                    width: '98%'
                 }]
             },{
                 title: _('bdlistings.listing.location'),
+                layout: 'form',
                 items: [{
                     name: 'companyname',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.companyname')+'*',
-                    width: '95%',
+                    width: '98%',
                     allowBlank: false
                 },{
                     name: 'contactinfo',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.contactinfo'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'address',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.address'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'neighborhood',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.neighborhood'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'zip',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.zip'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'city',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.city'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'country',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.country'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'website',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.website'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'calclatlong',
                     xtype: 'checkbox',
@@ -187,12 +197,12 @@ bdListings.window.Listing = function(config) {
                     name: 'latitude',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.latitude'),
-                    width: '95%'
+                    width: '98%'
                 },{
                     name: 'longitude',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.longitude'),
-                    width: '95%'
+                    width: '98%'
                 }]
             }],
             listeners: {
