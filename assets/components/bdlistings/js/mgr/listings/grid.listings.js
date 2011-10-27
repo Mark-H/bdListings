@@ -93,7 +93,8 @@ bdListings.grid.Listings = function(config) {
             {name: 'country', type: 'string'},
             {name: 'website', type: 'string'},
             {name: 'latitude', type: 'string'},
-            {name: 'longitude', type: 'string'}
+            {name: 'longitude', type: 'string'},
+            {name: 'clicks', type: 'int'}
         ],
         columns: [{
 			header: _('id'),
@@ -241,6 +242,11 @@ bdListings.grid.Listings = function(config) {
 			sortable: true,
 			width: 2,
             hidden: true
+		},{
+			header: _('bdlistings.clicks'),
+			dataIndex: 'clicks',
+			sortable: true,
+			width: 1
 		}]
     });
     bdListings.grid.Listings.superclass.constructor.call(this,config);
