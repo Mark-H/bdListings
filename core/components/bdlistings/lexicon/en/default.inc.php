@@ -33,6 +33,9 @@ $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.
 $_lang['bdlistings.error.object_nf'] = 'Object not found.';
 $_lang['bdlistings.error.save'] = 'Error saving object.';
 $_lang['bdlistings.error.remove'] = 'Error removing object.';
+$_lang['bdlistings.error.categoryinvalid'] = 'The category is invalid.';
+$_lang['bdlistings.error.pricegroupinvalid'] = 'The price group is invalid.';
+$_lang['bdlistings.error.targetinvalid'] = 'The target group is invalid.';
 
 /* Fields, somewhat alphabetical */
 $_lang['bdlistings.active'] = 'Active';
