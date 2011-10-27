@@ -5,7 +5,7 @@
 
 $start = $modx->getOption('start',$scriptProperties,0);
 $limit = $modx->getOption('limit',$scriptProperties,20);
-$sort = $modx->getOption('sort',$scriptProperties,'name');
+$sort = $modx->getOption('sort',$scriptProperties,'sortorder');
 $dir = $modx->getOption('dir',$scriptProperties,'asc');
 
 $c = $modx->newQuery('bdlTarget');

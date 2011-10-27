@@ -29,6 +29,7 @@ $xpdo_meta_map['bdlCategory']= array (
     'name' => NULL,
     'description' => NULL,
     'parent' => 0,
+    'sortorder' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -52,6 +53,13 @@ $xpdo_meta_map['bdlCategory']= array (
       'phptype' => 'int',
       'null' => true,
       'default' => 0,
+    ),
+    'sortorder' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'string',
+      'null' => false,
     ),
   ),
   'aggregates' => 

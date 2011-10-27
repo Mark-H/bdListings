@@ -7,6 +7,7 @@ $return = array();
 if ($node == 'root') {
     $c = $modx->newQuery('bdlCategory');
     $c->where(array('parent' => 0));
+    $c->sortby('sortorder','ASC');
     $results = $modx->getCollection('bdlCategory',$c);
     foreach ($results as $category) {
         /* @var bdlCategory $category */
@@ -27,6 +28,7 @@ else {
         $node = (int)$node;
         $c = $modx->newQuery('bdlCategory');
         $c->where(array('parent' => $node));
+        $c->sortby('sortorder','ASC');
         $results = $modx->getCollection('bdlCategory',$c);
         foreach ($results as $category) {
             /* @var bdlCategory $category */

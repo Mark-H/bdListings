@@ -3,7 +3,7 @@
 return array(
     'limit' => 0,
     'start' => 0,
-    'sortby' => 'display',
+    'sortby' => 'sortorder',
     'sortdir' => 'ASC',
 
     'rowSeparator' => "\n",

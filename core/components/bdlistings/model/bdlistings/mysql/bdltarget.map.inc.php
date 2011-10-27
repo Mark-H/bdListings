@@ -27,6 +27,7 @@ $xpdo_meta_map['bdlTarget']= array (
   'fields' => 
   array (
     'name' => NULL,
+    'sortorder' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -34,6 +35,13 @@ $xpdo_meta_map['bdlTarget']= array (
     array (
       'dbtype' => 'varchar',
       'precision' => '256',
+      'phptype' => 'string',
+      'null' => false,
+    ),
+    'sortorder' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
       'phptype' => 'string',
       'null' => false,
     ),

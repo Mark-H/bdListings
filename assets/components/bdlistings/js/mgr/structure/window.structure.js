@@ -36,6 +36,12 @@ bdListings.window.Category = function(config) {
             name: 'parent',
             hiddenName: 'parent',
             width: '95%'
+        },{
+            xtype: 'numberfield',
+            fieldLabel: _('bdlistings.sortorder'),
+            name: 'sortorder',
+            hiddenName: 'sortorder',
+            width: '95%'
         }],
         listeners: {
             success: function() {

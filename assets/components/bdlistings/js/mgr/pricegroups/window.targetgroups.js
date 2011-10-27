@@ -17,6 +17,12 @@ bdListings.window.PriceGroups = function(config) {
             name: 'display',
             allowBlank: false,
             width: '95%'
+        },{
+            xtype: 'numberfield',
+            fieldLabel: _('bdlistings.sortorder'),
+            name: 'sortorder',
+            allowBlank: false,
+            width: '95%'
         }],
         listeners: {
             success: function() {

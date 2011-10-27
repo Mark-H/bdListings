@@ -27,6 +27,7 @@ $xpdo_meta_map['bdlPriceGroup']= array (
   'fields' => 
   array (
     'display' => NULL,
+    'sortorder' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -34,6 +35,13 @@ $xpdo_meta_map['bdlPriceGroup']= array (
     array (
       'dbtype' => 'varchar',
       'precision' => '256',
+      'phptype' => 'string',
+      'null' => false,
+    ),
+    'sortorder' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
       'phptype' => 'string',
       'null' => false,
     ),

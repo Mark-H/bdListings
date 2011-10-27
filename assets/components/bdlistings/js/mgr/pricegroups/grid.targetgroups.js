@@ -23,10 +23,11 @@ bdListings.grid.PriceGroups = function(config) {
         paging: true,
         primaryKey: 'id',
         remoteSort: true,
-        sortBy: 'name',
+        sortBy: 'order',
         fields: [
             {name: 'id', type: 'int'},
-            {name: 'display', type: 'string'}
+            {name: 'display', type: 'string'},
+            {name: 'order', type: 'int'}
         ],
         columns: [{
 			header: _('id'),
@@ -39,6 +40,11 @@ bdListings.grid.PriceGroups = function(config) {
 			dataIndex: 'display',
 			sortable: true,
 			width: 3
+		},{
+			header: _('bdlistings.sortorder'),
+			dataIndex: 'sortorder',
+			sortable: true,
+			width: 1
 		}]
     });
     bdListings.grid.PriceGroups.superclass.constructor.call(this,config);

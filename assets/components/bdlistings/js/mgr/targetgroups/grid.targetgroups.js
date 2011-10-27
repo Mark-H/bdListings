@@ -23,10 +23,11 @@ bdListings.grid.TargetGroups = function(config) {
         paging: true,
         primaryKey: 'id',
         remoteSort: true,
-        sortBy: 'name',
+        sortBy: 'order',
         fields: [
             {name: 'id', type: 'int'},
-            {name: 'name', type: 'string'}
+            {name: 'name', type: 'string'},
+            {name: 'sortorder', type: 'int'}
         ],
         columns: [{
 			header: _('id'),
@@ -39,6 +40,11 @@ bdListings.grid.TargetGroups = function(config) {
 			dataIndex: 'name',
 			sortable: true,
 			width: 3
+		},{
+			header: _('bdlistings.sortorder'),
+			dataIndex: 'sortorder',
+			sortable: true,
+			width: 1
 		}]
     });
     bdListings.grid.TargetGroups.superclass.constructor.call(this,config);
