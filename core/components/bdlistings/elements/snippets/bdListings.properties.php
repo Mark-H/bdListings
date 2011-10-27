@@ -21,6 +21,8 @@ return array(
     'category' => 0,
     'subcategory' => 0,
 
+    'redirectResource' => 39,
+
     'staticMapWidth' => 150,
     'staticMapHeight' => 150,
     'staticMapZoom' => 12,

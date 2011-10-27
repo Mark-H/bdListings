@@ -5,6 +5,7 @@ $snips = array(
     'bdPriceGroups' => 'Lists price groups as defined in the component.',
     'bdTargets' => 'Lists target groups as defined in the component.',
     'bdHookNewListing' => 'Hook to create an inactive listing. Use in conjunction with a validate property, and email hook to send notifications.',
+    'bdRedirect' => 'Takes care of Redirecting the user to the listing URL, as well as registering a click.',
 );
 
 $snippets = array();

@@ -101,6 +101,9 @@ foreach ($collection as $listing) {
         $ta['googlemap_url'] = '';
     }
 
+    /* Create redirect URL */
+    $ta['redirect_url'] = $modx->makeUrl($p['redirectResource'],'',array('lid' => $ta['id']));
+
     $results[] = $modx->bdlistings->getChunk($p['tplRow'],$ta);
 }
 
