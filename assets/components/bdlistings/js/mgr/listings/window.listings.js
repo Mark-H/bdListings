@@ -51,6 +51,11 @@ bdListings.window.Listing = function(config) {
                     width: '98%',
                     allowBlank: false
                 },{
+                    name: 'website',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.website'),
+                    width: '98%'
+                },{
                     name: 'description',
                     hiddenName: 'description',
                     fieldLabel: _('bdlistings.description'),
@@ -183,11 +188,6 @@ bdListings.window.Listing = function(config) {
                     name: 'country',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.country'),
-                    width: '98%'
-                },{
-                    name: 'website',
-                    xtype: 'textfield',
-                    fieldLabel: _('bdlistings.website'),
                     width: '98%'
                 },{
                     name: 'calclatlong',
