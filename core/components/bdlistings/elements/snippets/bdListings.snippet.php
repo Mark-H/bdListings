@@ -127,6 +127,16 @@ foreach ($collection as $listing) {
         $ta['redirect_url'] = '';
     }
 
+    /* Add images */
+    $ta['images'] = array();
+    $imgs = $listing->getMany('Images');
+    /* @var bdlImage $img */
+    foreach ($imgs as $img) {
+        $tia = $img->toArray();
+        $ta['images'][] = $modx->bdlistings->getChunk($p['tplImage'],$tia);
+    }
+    $ta['images'] = implode($p['imageSeparator'],$ta['images']);
+
     $results[] = $modx->bdlistings->getChunk($p['tplRow'],$ta);
 }
 

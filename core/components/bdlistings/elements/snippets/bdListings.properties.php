@@ -35,9 +35,10 @@ return array(
     'staticMapMarkerIconShadow' => 'true',
 
     'rowSeparator' => "\n",
-
+    'imageSeparator' => " \n",
     'tplOuter' => 'bdListings.outer',
     'tplRow' => 'bdListings.row',
+    'tplImage' => 'bdListings.image'
 );
 
 ?>

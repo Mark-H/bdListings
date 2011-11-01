@@ -1,0 +1,1 @@
+<img src="[[phpthumbof? input=`http://localhost[[+image]]` &options=`w=150&h=150&zc=1`]]" alt="[[+caption]]" />
