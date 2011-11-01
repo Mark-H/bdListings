@@ -121,7 +121,11 @@ foreach ($collection as $listing) {
     }
 
     /* Create redirect URL */
-    $ta['redirect_url'] = $modx->makeUrl($p['redirectResource'],'',array('lid' => $ta['id']));
+    if (!empty($ta['website'])) {
+        $ta['redirect_url'] = $modx->makeUrl($p['redirectResource'],'',array('lid' => $ta['id']));
+    } else {
+        $ta['redirect_url'] = '';
+    }
 
     $results[] = $modx->bdlistings->getChunk($p['tplRow'],$ta);
 }
