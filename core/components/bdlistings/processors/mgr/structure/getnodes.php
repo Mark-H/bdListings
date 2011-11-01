@@ -16,7 +16,7 @@ if ($node == 'root') {
             $return[] = array (
                 'text' => $tr['name'] . ' (' . $tr['id'] . ')',
                 'id' => $tr['id'],
-                'leaf' => ($modx->getCount('bdlCategory',array('parent' => $tr['id'])) > 0) ? false : true,
+                'leaf' => false,
                 'type' => 'category',
                 'qtip' => $tr['description'],
             );

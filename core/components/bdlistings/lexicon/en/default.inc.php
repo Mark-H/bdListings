@@ -39,6 +39,9 @@ $_lang['bdlistings.error.remove'] = 'Error removing object.';
 $_lang['bdlistings.error.categoryinvalid'] = 'The category is invalid.';
 $_lang['bdlistings.error.pricegroupinvalid'] = 'The price group is invalid.';
 $_lang['bdlistings.error.targetinvalid'] = 'The target group is invalid.';
+$_lang['bdlistings.error.invalid'] = 'Invalid request.';
+$_lang['bdlistings.error.sortinvalid'] = 'Requested sort is not valid: [[+errors]]';
+$_lang['bdlistings.error.toodeep'] = 'Category [[+id]] is nested too deep, only two levels is allowed.';
 
 /* Fields, somewhat alphabetical */
 $_lang['bdlistings.active'] = 'Active';

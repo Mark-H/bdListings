@@ -32,10 +32,11 @@ Ext.extend(bdListings.tree.Structure,MODx.tree.Tree,{
             }
             ,listeners: {
                 'success': {fn:function(r) {
-                    this.reloadNode(dropEvent.target.parentNode);
+                    this.refresh();
                 },scope:this}
                 ,'failure': {fn:function(r) {
                     MODx.form.Handler.errorJSON(r);
+                    this.refresh();
                     return false;
                 },scope:this}
             }
