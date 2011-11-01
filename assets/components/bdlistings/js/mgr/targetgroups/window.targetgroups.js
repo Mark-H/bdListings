@@ -21,7 +21,6 @@ bdListings.window.TargetGroups = function(config) {
             xtype: 'numberfield',
             fieldLabel: _('bdlistings.sortorder'),
             name: 'sortorder',
-            allowBlank: false,
             width: '95%'
         }],
         listeners: {

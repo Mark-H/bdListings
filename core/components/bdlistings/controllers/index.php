@@ -53,8 +53,8 @@ $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/targetgroups/gr
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/targetgroups/window.targetgroups.js');
 
 /* Price Groups */
-$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/pricegroups/grid.targetgroups.js');
-$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/pricegroups/window.targetgroups.js');
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/pricegroups/grid.pricegroups.js');
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/pricegroups/window.pricegroups.js');
 
 /* Images */
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/images/grid.images.js');
