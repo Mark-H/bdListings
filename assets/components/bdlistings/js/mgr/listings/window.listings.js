@@ -1,7 +1,7 @@
 
 bdListings.window.Listing = function(config) {
     config = config || {};
-    this.id = Ext.id();
+    config.isNew = (config.isNew) ? true : false;
     Ext.applyIf(config,{
         title: _('bdlistings.listing'),
         url: bdListings.config.connector_url,
@@ -68,13 +68,6 @@ bdListings.window.Listing = function(config) {
                     enableAlignment: false,
                     width: '99%',
                     height: 125
-                },{
-                    name: 'image',
-                    fieldLabel: _('bdlistings.image'),
-                    xtype: 'modx-combo-browser',
-                    width: '95%',
-                    hideFiles: true,
-                    anchor: '0 0'
                 },{
                     name: 'publisheduntil',
                     fieldLabel: _('bdlistings.publisheduntil'),
@@ -192,7 +185,8 @@ bdListings.window.Listing = function(config) {
                 },{
                     name: 'calclatlong',
                     xtype: 'checkbox',
-                    fieldLabel: _('bdlistings.calclatlong')
+                    fieldLabel: _('bdlistings.calclatlong'),
+                    description: _('bdlistings.calclatlong.desc')
                 },{
                     name: 'latitude',
                     xtype: 'textfield',
@@ -203,6 +197,14 @@ bdListings.window.Listing = function(config) {
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.longitude'),
                     width: '98%'
+                }]
+            },{
+                title: _('bdlistings.listing.images'),
+                tabTip: (config.isNew) ? _('bdlistings.listing.images.saverequired') : '',
+                disabled: config.isNew,
+                items: [{
+                    xtype: 'bdlistings-grid-images',
+                    listing: config.listing
                 }]
             }],
             listeners: {
@@ -215,6 +217,7 @@ bdListings.window.Listing = function(config) {
         listeners: {
             'success': function() {
                 Ext.getCmp('grid-listings').refresh();
+                this.close();
             }
         }
     });

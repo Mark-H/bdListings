@@ -56,5 +56,9 @@ $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/targetgroups/wi
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/pricegroups/grid.targetgroups.js');
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/pricegroups/window.targetgroups.js');
 
+/* Images */
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/images/grid.images.js');
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/images/window.images.js');
+
 return '<div id="bdlistings"></div>';
 ?>

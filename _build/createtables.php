@@ -13,7 +13,7 @@ $manager = $modx->getManager();
 $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget('HTML');
 $objects = array(
-    'bdlListing','bdlCategory','bdlTarget','bdlPriceGroup','bdlClicks'
+    'bdlListing','bdlCategory','bdlTarget','bdlPriceGroup','bdlClicks','bdlImage'
 );
 
 foreach ($objects as $obj) {

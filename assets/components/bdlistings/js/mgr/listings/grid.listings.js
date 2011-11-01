@@ -16,7 +16,7 @@ bdListings.grid.Listings = function(config) {
             xtype: 'button',
             text: _('bdlistings.create',{ what: _('bdlistings.listing') } ),
             handler: function() {
-                win = new bdListings.window.Listing();
+                win = new bdListings.window.Listing({isNew: true});
                 win.setValues({calclatlong: true});
                 win.show();
             }
@@ -73,7 +73,6 @@ bdListings.grid.Listings = function(config) {
             {name: 'price', type: 'float'},
             {name: 'pricegroup', type: 'int'},
             {name: 'pricegroup_display', type: 'string'},
-            {name: 'image', type: 'string'},
             {name: 'category', type: 'int'},
             {name: 'subcategory', type: 'int'},
             {name: 'category_name', type: 'string'},
@@ -138,12 +137,6 @@ bdListings.grid.Listings = function(config) {
 			width: 2,
             hidden: true
 		},{
-            header: _('bdlistings.image'),
-            dataIndex: 'image',
-            sortable: true,
-            width: 3,
-            hidden: true
-        },{
 			header: _('bdlistings.category'),
 			dataIndex: 'category_name',
 			sortable: true,
@@ -286,7 +279,7 @@ Ext.extend(bdListings.grid.Listings,MODx.grid.Grid,{
         m.push({
             text: _('bdlistings.update',{what: _('bdlistings.listing')}),
             handler: function () {
-                win = new bdListings.window.Listing();
+                win = new bdListings.window.Listing({listing: d.id});
                 win.setValues(d);
                 win.show();
             }
@@ -302,9 +295,9 @@ Ext.extend(bdListings.grid.Listings,MODx.grid.Grid,{
                         id: d['id']
                     },
                     listeners: {
-                        'success': { fn:function (r) {
+                        'success': function (r) {
                             Ext.getCmp('grid-listings').refresh();
-                        }, scope: true}
+                        }, scope: this
                     }
                 });
             }

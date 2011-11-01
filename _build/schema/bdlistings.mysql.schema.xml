@@ -6,7 +6,6 @@
         <field key="keywords" dbtype="varchar" precision="1024" phptype="string" null="true" />
         <field key="price" dbtype="decimal" precision="15,2" phptype="float" null="false" />
         <field key="pricegroup" dbtype="int" precision="11" phptype="integer" null="false" />
-        <field key="image" dbtype="varchar" precision="1024" phptype="string" null="true" />
 
         <field key="category" dbtype="int" precision="11" phptype="integer" null="false" index="fk" />
         <field key="subcategory" dbtype="int" precision="11" phptype="integer" null="true" index="fk" />
@@ -34,6 +33,7 @@
         <aggregate alias="Target" class="bdlTarget" local="target" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="PriceGroup" class="bdlPriceGroup" local="pricegroup" foreign="id" cardinality="one" owner="foreign" />
 
+        <composite alias="Images" class="bdlImage" local="id" foreign="listing" cardinality="many" owner="local" />
     </object>
 
     <object class="bdlCategory" table="bdl_category" extends="xPDOSimpleObject">
@@ -70,6 +70,15 @@
         <field key="referrer" dbtype="varchar" precision="512" phptype="string" null="false" default="- no referer available -" />
 
         <aggregate alias="Listing" class="bdlListing" local="listing" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+    <object class="bdlImage" table="bdl_image" extends="xPDOSimpleObject">
+        <field key="image" dbtype="varchar" precision="256" phptype="string" null="false" />
+        <field key="caption" dbtype="varchar" precision="256" phptype="string" null="false" />
+        <field key="sortorder" dbtype="int" precision="10" phptype="int" null="false" />
+        <field key="listing" dbtype="int" precision="10" phptype="int" null="false" />
+
+        <aggregate alias="Listings" class="bdlListing" local="listing" foreign="id" cardinality="one" owner="foreign" />
     </object>
 </model>
 

@@ -22,7 +22,7 @@ $d['featured'] = ($d['featured'] == 'on') ? true : false;
 
 $listing->fromArray($d);
 
-if ((!$listing->get('latitude') && !$listing->get('longitude')) || ($d['calclatlong'] == 'on')) {
+if ($d['calclatlong'] == 'on') {
     $listing->getLatLong();
 }
 

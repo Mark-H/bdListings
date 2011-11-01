@@ -21,12 +21,15 @@ $_lang['bdlistings.search...'] = 'Search...';
 $_lang['bdlistings.listing.details'] = 'Listing Details';
 $_lang['bdlistings.listing.location'] = 'Location &amp; Company';
 $_lang['bdlistings.listing.categorize'] = 'Categorization';
+$_lang['bdlistings.listing.images'] = 'Images';
+$_lang['bdlistings.listing.images.saverequired'] = 'You need to save the new listing before you can add images to it.';
 $_lang['bdlistings.date.start'] = 'Date From';
 $_lang['bdlistings.date.end'] = 'Date End';
 $_lang['bdlistings.date.steps'] = '# of Steps';
 $_lang['bdlistings.remove.confirm'] = 'Remove [[+what]]?';
 $_lang['bdlistings.remove.confirm.text'] = 'Are you sure you want to remove this [[+what]]? This can not be undone.';
 $_lang['bdlistings.calclatlong'] = 'Find Lat/Long';
+$_lang['bdlistings.calclatlong.desc'] = 'When enabled, this will make a request to Google Maps to retrieve the best latitude/longitude match based on the details you specified above. You will at least need the address or zip, as well as the city.';
 
 /* Error messages */
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';
@@ -40,6 +43,7 @@ $_lang['bdlistings.error.targetinvalid'] = 'The target group is invalid.';
 /* Fields, somewhat alphabetical */
 $_lang['bdlistings.active'] = 'Active';
 $_lang['bdlistings.address'] = 'Address';
+$_lang['bdlistings.caption'] = 'Caption';
 $_lang['bdlistings.category'] = 'Category';
 $_lang['bdlistings.categories'] = 'Categories';
 $_lang['bdlistings.city'] = 'City';
@@ -52,6 +56,7 @@ $_lang['bdlistings.description'] = 'Description';
 $_lang['bdlistings.display'] = 'Display as';
 $_lang['bdlistings.ipaddress'] = 'IP Address';
 $_lang['bdlistings.image'] = 'Image';
+$_lang['bdlistings.images'] = 'Images';
 $_lang['bdlistings.featured'] = 'Featured';
 $_lang['bdlistings.keywords'] = 'Keywords';
 $_lang['bdlistings.latitude'] = 'Latitude';
