@@ -7,6 +7,7 @@ bdListings.window.Listing = function(config) {
         url: bdListings.config.connector_url,
         closeAction: 'close',
         autoHeight: true,
+        id: Ext.id(),
         baseParams: {
             action: 'mgr/listings/save'
         },
@@ -217,7 +218,6 @@ bdListings.window.Listing = function(config) {
         listeners: {
             'success': function() {
                 Ext.getCmp('grid-listings').refresh();
-                this.close();
             }
         }
     });

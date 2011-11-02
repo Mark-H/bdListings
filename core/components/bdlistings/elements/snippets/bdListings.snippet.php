@@ -134,11 +134,13 @@ foreach ($collection as $listing) {
 
     /* Add images */
     $ta['images'] = array();
+    $ta['primaryimage'] = '';
     $imgs = $listing->getMany('Images');
     /* @var bdlImage $img */
     foreach ($imgs as $img) {
         $tia = $img->toArray();
         $ta['images'][] = $modx->bdlistings->getChunk($p['tplImage'],$tia);
+        if ($tia['primary'] == true) { $ta['primaryimage'] = $tia['image']; }
     }
     $ta['images'] = implode($p['imageSeparator'],$ta['images']);
 

@@ -60,8 +60,8 @@ $r = $modx->getCollection('bdlListing',$c);
 foreach ($r as $listing) {
     /* @var bdlListing $listing */
     $ta = $listing->toArray('',false,true);
-    $ta['createdon'] = date($modx->config['manager_date_format'].' '.$modx->config['manager_time_format'],strtotime($ta['createdon']));
-    $ta['publisheduntil'] = date($modx->config['manager_date_format'].' '.$modx->config['manager_time_format'],strtotime($ta['publisheduntil']));
+    $ta['createdon'] = ($ta['createdon'] != '0000-00-00 00:00:00') ? date($modx->config['manager_date_format'].' '.$modx->config['manager_time_format'],strtotime($ta['createdon'])) : '';
+    $ta['publisheduntil'] = ($ta['publisheduntil'] != '0000-00-00 00:00:00') ? date($modx->config['manager_date_format'].' '.$modx->config['manager_time_format'],strtotime($ta['publisheduntil'])) : '';
     $ta['clicks'] = $modx->getCount('bdlClicks',array('listing' => $ta['id']));
     $results[] = $ta;
 }

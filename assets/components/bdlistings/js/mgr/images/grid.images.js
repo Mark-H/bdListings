@@ -31,7 +31,8 @@ bdListings.grid.Images = function(config) {
             {name: 'image', type: 'string'},
             {name: 'listing', type: 'int'},
             {name: 'caption', type: 'string'},
-            {name: 'sortorder', type: 'int'}
+            {name: 'sortorder', type: 'int'},
+            {name: 'primary', type: 'bool'}
         ],
         columns: [{
 			header: _('id'),
@@ -55,6 +56,11 @@ bdListings.grid.Images = function(config) {
 			dataIndex: 'sortorder',
 			sortable: true,
 			width: 1
+		},{
+			header: _('bdlistings.primary'),
+			dataIndex: 'primary',
+			sortable: true,
+			width: 1
 		}]
     });
     bdListings.grid.Images.superclass.constructor.call(this,config);
@@ -63,12 +69,14 @@ Ext.extend(bdListings.grid.Images,MODx.grid.Grid,{
     getMenu: function() {
         var r = this.getSelectionModel().getSelected();
         var d = r.data;
+        /* Prevent security error */
+        d['image'] = '';
 
         var m = [];
         m.push({
             text: _('bdlistings.update',{what: _('bdlistings.image')}),
             handler: function () {
-                win = new bdListings.window.Images({winId: this.id});
+                win = new bdListings.window.Images({winId: this.id, isNew: false});
                 win.setValues(d);
                 win.show();
             }

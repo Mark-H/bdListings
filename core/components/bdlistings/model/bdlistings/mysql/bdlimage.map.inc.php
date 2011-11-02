@@ -30,6 +30,7 @@ $xpdo_meta_map['bdlImage']= array (
     'caption' => NULL,
     'sortorder' => NULL,
     'listing' => NULL,
+    'primary' => 0,
   ),
   'fieldMeta' => 
   array (
@@ -60,6 +61,14 @@ $xpdo_meta_map['bdlImage']= array (
       'precision' => '10',
       'phptype' => 'int',
       'null' => false,
+    ),
+    'primary' => 
+    array (
+      'dbtype' => 'tinyint',
+      'precision' => '1',
+      'phptype' => 'boolean',
+      'default' => 0,
+      'null' => true,
     ),
   ),
   'aggregates' => 

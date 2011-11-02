@@ -15,6 +15,7 @@ if ($id > 0) {
 }
 
 $d = $scriptProperties;
+$d['primary'] = ($d['primary'] == 'on') ? true : false;
 
 $object->fromArray($d);
 if ($d['image']['name']) {

@@ -37,6 +37,11 @@ bdListings.window.Images = function(config) {
             fieldLabel: _('bdlistings.sortorder'),
             name: 'sortorder',
             width: '95%'
+        },{
+            xtype: 'checkbox',
+            fieldLabel: _('bdlistings.primary'),
+            name: 'primary',
+            width: '95%'
         }],
         listeners: {
             success: function() {
