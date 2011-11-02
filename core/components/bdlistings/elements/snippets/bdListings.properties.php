@@ -12,7 +12,7 @@ return array(
     'where' => '',
     'acceptUrlParams' => true,
     'acceptedUrlParams' => array(
-        'query','keyword','target','pricegroup','city','category','subcategory','sortby','sortdir'
+        'query','keyword','target','pricegroup','city','category','subcategory','sortby','sortdir','listings',
     ),
     'query' => '',
     'keyword' => '',
@@ -21,6 +21,8 @@ return array(
     'city' => '',
     'category' => 0,
     'subcategory' => 0,
+
+    'listings' => '',
 
     'redirectResource' => 39,
 

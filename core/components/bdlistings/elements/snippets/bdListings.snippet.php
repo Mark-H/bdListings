@@ -44,6 +44,11 @@ $c->where(
     )
 );
 
+if (!empty($p['listings'])) {
+    $listings = explode(',', $p['listings']);
+    $c->where(array('`bdlListing`.`id`:IN' => $listings));
+}
+
 if (intval($p['activeOnly']) > 0) $c->where(array('active' => true));
 if (intval($p['featuredOnly']) > 0) $c->where(array('featured' => true));
 if (!empty($p['where'])) $c->where($p['where']);
