@@ -49,8 +49,7 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.price')+'*',
                     xtype: 'numberfield',
                     allowNegative: false,
-                    width: '98%',
-                    allowBlank: false
+                    width: '98%'
                 },{
                     name: 'website',
                     xtype: 'textfield',
@@ -92,8 +91,7 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.pricegroup')+'*',
                     xtype: 'bdlisting-combo-pricegroup',
                     width: '92%',
-                    anchor: '0 0',
-                    allowBlank: false
+                    anchor: '0 0'
                 },{
                     name: 'category',
                     hiddenName: 'category',
