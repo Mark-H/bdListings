@@ -159,6 +159,16 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.contactinfo'),
                     width: '98%'
                 },{
+                    name: 'phone',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.phone'),
+                    width: '98%'
+                },{
+                    name: 'email',
+                    xtype: 'textfield',
+                    fieldLabel: _('bdlistings.email'),
+                    width: '98%'
+                },{
                     name: 'address',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.address'),

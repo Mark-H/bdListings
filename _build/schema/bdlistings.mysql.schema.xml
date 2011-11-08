@@ -4,8 +4,8 @@
         <field key="title" dbtype="varchar" precision="256" phptype="string" null="false" />
         <field key="description" dbtype="text" phptype="string" null="true" />
         <field key="keywords" dbtype="varchar" precision="1024" phptype="string" null="true" />
-        <field key="price" dbtype="decimal" precision="15,2" phptype="float" null="false" />
-        <field key="pricegroup" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="price" dbtype="decimal" precision="15,2" phptype="float" null="true" />
+        <field key="pricegroup" dbtype="int" precision="11" phptype="integer" null="true" />
 
         <field key="category" dbtype="int" precision="11" phptype="integer" null="false" index="fk" />
         <field key="subcategory" dbtype="int" precision="11" phptype="integer" null="true" index="fk" />
@@ -20,6 +20,8 @@
         <field key="companyname" dbtype="varchar" precision="256" phptype="string" null="false" />
         <field key="contactinfo" dbtype="varchar" precision="1024" phptype="string" null="true" />
         <field key="address" dbtype="varchar" precision="1024" phptype="string" null="true" />
+        <field key="phone" dbtype="varchar" precision="256" phptype="string" null="true" />
+        <field key="email" dbtype="varchar" precision="256" phptype="string" null="true" />
         <field key="neighborhood" dbtype="varchar" precision="1024" phptype="string" null="true" />
         <field key="zip" dbtype="varchar" precision="32" phptype="string" null="true" />
         <field key="city" dbtype="varchar" precision="256" phptype="string" null="true" />

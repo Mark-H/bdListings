@@ -87,6 +87,8 @@ bdListings.grid.Listings = function(config) {
             {name: 'contactinfo', type: 'string'},
             {name: 'address', type: 'string'},
             {name: 'neighborhood', type: 'string'},
+            {name: 'phone', type: 'string'},
+            {name: 'email', type: 'string'},
             {name: 'zip', type: 'string'},
             {name: 'city', type: 'string'},
             {name: 'country', type: 'string'},
@@ -184,6 +186,18 @@ bdListings.grid.Listings = function(config) {
 		},{
 			header: _('bdlistings.contactinfo'),
 			dataIndex: 'contactinfo',
+			sortable: true,
+			width: 2,
+            hidden: true
+		},{
+			header: _('bdlistings.phone'),
+			dataIndex: 'phone',
+			sortable: true,
+			width: 2,
+            hidden: true
+		},{
+			header: _('bdlistings.email'),
+			dataIndex: 'email',
 			sortable: true,
 			width: 2,
             hidden: true
