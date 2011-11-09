@@ -17,12 +17,14 @@ if ($id > 0) {
 $d = $scriptProperties;
 $d['primary'] = ($d['primary'] == 'on') ? true : false;
 
-$object->fromArray($d);
-if ($d['image']['name']) {
+if (!empty($d['image']['name'])) {
     $response = $object->handleUpload($d['image'],$d['listing']);
     if (is_string($response)) $object->set('image',$response);
     else return $modx->error->failure($response['error']);
 }
+unset ($d['image']);
+
+$object->fromArray($d);
 
 $result = $object->save();
 
