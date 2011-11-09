@@ -23,7 +23,7 @@ set_time_limit(0);
 define('PKG_NAME','bdListings');
 define('PKG_NAME_LOWER',strtolower(PKG_NAME));
 define('PKG_VERSION','0.9.6');
-define('PKG_RELEASE','dev1');
+define('PKG_RELEASE','dev2');
 
 $root = dirname(dirname(__FILE__)).'/';
 $sources = array (
