@@ -41,6 +41,8 @@ $xpdo_meta_map['bdlListing']= array (
     'companyname' => NULL,
     'contactinfo' => NULL,
     'address' => NULL,
+    'phone' => NULL,
+    'email' => NULL,
     'neighborhood' => NULL,
     'zip' => NULL,
     'city' => NULL,
@@ -76,14 +78,14 @@ $xpdo_meta_map['bdlListing']= array (
       'dbtype' => 'decimal',
       'precision' => '15,2',
       'phptype' => 'float',
-      'null' => false,
+      'null' => true,
     ),
     'pricegroup' => 
     array (
       'dbtype' => 'int',
       'precision' => '11',
       'phptype' => 'integer',
-      'null' => false,
+      'null' => true,
     ),
     'category' => 
     array (
@@ -156,6 +158,20 @@ $xpdo_meta_map['bdlListing']= array (
     array (
       'dbtype' => 'varchar',
       'precision' => '1024',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'phone' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '256',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'email' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '256',
       'phptype' => 'string',
       'null' => true,
     ),

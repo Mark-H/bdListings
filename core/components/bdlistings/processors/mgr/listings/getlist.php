@@ -5,8 +5,8 @@
 
 $start = $modx->getOption('start',$scriptProperties,0);
 $limit = $modx->getOption('limit',$scriptProperties,20);
-$sort = $modx->getOption('sort',$scriptProperties,'title');
-$dir = $modx->getOption('dir',$scriptProperties,'asc');
+$sort = $modx->getOption('sort',$scriptProperties,'createdon');
+$dir = $modx->getOption('dir',$scriptProperties,'desc');
 
 $search = $modx->getOption('query',$scriptProperties,null);
 $target = $modx->getOption('target',$scriptProperties,null);
