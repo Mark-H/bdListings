@@ -12,7 +12,7 @@ return array(
     'where' => '',
     'acceptUrlParams' => true,
     'acceptedUrlParams' => array(
-        'query','keyword','target','pricegroup','city','category','subcategory','sortby','sortdir','listings',
+        'query','keyword','target','pricegroup','city','category','subcategory','sort','listings',
     ),
     'query' => '',
     'keyword' => '',
