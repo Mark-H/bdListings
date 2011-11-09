@@ -90,7 +90,7 @@ class bdlImage extends xPDOSimpleObject {
 
         /* New file upload */
         $uploadPath = $this->xpdo->getOption('bdlistings.uploadpath');
-        if (empty($uploadPath)) $uploadPath = $this->xpdo->getOption('bdlistings.assets_path',null,$this->xpdo->getOption('assets_path')).'uploads/';
+        if (empty($uploadPath)) $uploadPath = $this->xpdo->getOption('bdlistings.assets_path',null,$this->xpdo->getOption('assets_path').'components/bdlistings/').'uploads/';
 
         $this->xpdo->getService('fileHandler','modFileHandler');
 
