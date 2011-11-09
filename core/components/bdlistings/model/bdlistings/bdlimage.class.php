@@ -58,6 +58,14 @@ class bdlImage extends xPDOSimpleObject {
     }
 
     public function handleUpload (array $file = array(), $listing = 0) {
+        $exts = $this->xpdo->getOption('bdlistings.allowed_extensions',null,'jpg,jpeg,png,gif,ico');
+        $exts = explode(',',$exts);
+        $filesize = (int)$this->xpdo->getOption('bdlistings.maxfilesize',null,4194304);
+
+        if ($file['size'] > $filesize) return array('error' => $this->xpdo->lexicon('bdlistings.error.filetoobig'));
+        $extension = pathinfo($file['name'],PATHINFO_EXTENSION);
+        if (!in_array($extension,$exts)) return array('error' => $this->xpdo->lexicon('bdlistings.error.invalidext'));
+
         /* New file upload */
         $uploadPath = $this->xpdo->getOption('bdlistings.uploadpath');
         if (empty($uploadPath)) $uploadPath = $this->xpdo->getOption('bdlistings.assets_path',null,$this->xpdo->getOption('assets_path')).'uploads/';
