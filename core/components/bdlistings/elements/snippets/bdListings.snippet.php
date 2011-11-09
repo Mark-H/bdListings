@@ -139,15 +139,26 @@ foreach ($collection as $listing) {
     /* @var bdlImage $img */
     foreach ($imgs as $img) {
         $tia = $img->toArray();
+        $tia['imagepath'] = $img->get('imagepath');
         $ta['images'][] = $modx->bdlistings->getChunk($p['tplImage'],$tia);
-        if ($tia['primary'] == true) { $ta['primaryimage'] = $tia['image']; }
+        if ($tia['primary'] == true) {
+            $ta['primaryimage'] = $tia['image'];
+            $ta['primaryimagepath'] = $tia['imagepath'];
+        }
+    }
+    if (empty($ta['primaryimage'])) {
+        if (count($imgs) > 0) {
+            $first = array_shift($imgs);
+            $ta['primaryimage'] = $first->get('image');
+            $ta['primaryimagepath'] = $first->get('imagepath');
+        }
     }
     $ta['images'] = implode($p['imageSeparator'],$ta['images']);
 
     $results[] = $modx->bdlistings->getChunk($p['tplRow'],$ta);
 }
 
-$results = implode($p['categorySeparator'],$results);
+$results = implode($p['rowSeparator'],$results);
 $results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results));
 
 
