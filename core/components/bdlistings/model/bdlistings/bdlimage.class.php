@@ -22,6 +22,14 @@
  *
 */
 class bdlImage extends xPDOSimpleObject {
+    /**
+     * Overrides xPDOSimpleObject's get method for specific image url/path handling.
+     *
+     * @param $k Key
+     * @param $format
+     * @param $formatTemplate
+     * @return string Resulting value
+     */
     public function get($k, $format = null, $formatTemplate= null) {
         switch ($k) {
             case 'imagepath':
@@ -47,6 +55,11 @@ class bdlImage extends xPDOSimpleObject {
         return $value;
     }
 
+    /**
+     * @inherit xPDOObject::remove
+     * @param array $ancestors
+     * @return boolean
+     */
     public function remove(array $ancestors = array()) {
         $filename = $this->get('imagepath');
         if (!empty($filename)) {
@@ -57,6 +70,13 @@ class bdlImage extends xPDOSimpleObject {
         return parent::remove($ancestors);
     }
 
+    /**
+     * Takes an array with name, tmp_name, size, error and type (the regular file post ;) ) and a listing ID to upload the file.
+     *
+     * @param array $file
+     * @param int $listing
+     * @return array|string
+     */
     public function handleUpload (array $file = array(), $listing = 0) {
         $exts = $this->xpdo->getOption('bdlistings.allowed_extensions',null,'jpg,jpeg,png,gif,ico');
         $exts = explode(',',$exts);
@@ -65,6 +85,8 @@ class bdlImage extends xPDOSimpleObject {
         if ($file['size'] > $filesize) return array('error' => $this->xpdo->lexicon('bdlistings.error.filetoobig'));
         $extension = pathinfo($file['name'],PATHINFO_EXTENSION);
         if (!in_array(strtolower($extension),$exts)) return array('error' => $this->xpdo->lexicon('bdlistings.error.invalidext',array('ext' => $extension)));
+
+        if ($file['error'] > 0) { return array('error' => $this->xpdo->lexicon('bdlistings.error.file.'.$file['error'])); }
 
         /* New file upload */
         $uploadPath = $this->xpdo->getOption('bdlistings.uploadpath');

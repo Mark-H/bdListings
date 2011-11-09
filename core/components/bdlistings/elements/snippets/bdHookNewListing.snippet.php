@@ -51,17 +51,32 @@ if ($result !== true) {
 
 /* Handle file uploads */
 if (is_array($d['image'])) {
+    $images = array();
+    $nr = 0;
+    while (count($d['image']['name']) > $nr) {
+        $images[] = array(
+            'name' => $d['image']['name'][$nr],
+            'type' => $d['image']['type'][$nr],
+            'tmp_name' => $d['image']['tmp_name'][$nr],
+            'size' => $d['image']['size'][$nr],
+            'error' => $d['image']['error'][$nr],
+        );
+        $nr++;
+    }
+
     /* @var bdlImage $img */
-    foreach ($d['image'] as $i) {
-        $img = $modx->newObject('bdlImage',array('listing' => $listing->get('id')));
-        $response = $img->handleUpload($i,$listing->get('id'));
-        if (is_string($response)) {
-            $img->set('image',$response);
-            $img->save();
-        }
-        else {
-            $hook->addError('message',$modx->lexicon('bdlistings.error.fileupload').' '.$response['error']);
-            return false;
+    foreach ($images as $i) {
+        if (!empty($i['name'])) {
+            $img = $modx->newObject('bdlImage',array('listing' => $listing->get('id')));
+            $response = $img->handleUpload($i,$listing->get('id'));
+            if (is_string($response)) {
+                $img->set('image',$response);
+                $img->save();
+            }
+            else {
+                $hook->addError('message',$modx->lexicon('bdlistings.error.fileupload',array('file' => $i['name'])).' '.$response['error']);
+                return false;
+            }
         }
     }
 }

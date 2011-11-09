@@ -42,9 +42,16 @@ $_lang['bdlistings.error.targetinvalid'] = 'The target group is invalid.';
 $_lang['bdlistings.error.invalid'] = 'Invalid request.';
 $_lang['bdlistings.error.sortinvalid'] = 'Requested sort is not valid: [[+errors]]';
 $_lang['bdlistings.error.toodeep'] = 'Category [[+id]] is nested too deep, only two levels is allowed.';
-$_lang['bdlistings.error.fileupload'] = 'File upload failed.';
+$_lang['bdlistings.error.fileupload'] = 'Uploading [[+file]] failed.';
 $_lang['bdlistings.error.filetoobig'] = 'File too big.';
 $_lang['bdlistings.error.invalidext'] = 'Invalid file type: [[+ext]].';
+$_lang['bdlistings.error.file.1'] = 'File too big: server does not allow uploads of this size.';
+$_lang['bdlistings.error.file.2'] = 'File too big: exceeds specified max size.';
+$_lang['bdlistings.error.file.3'] = 'Only part of the file was uploaded.';
+$_lang['bdlistings.error.file.4'] = 'No file was uploaded.';
+$_lang['bdlistings.error.file.6'] = 'Server misconfiguration.';
+$_lang['bdlistings.error.file.7'] = 'Failed to write to disk.';
+$_lang['bdlistings.error.file.8'] = 'Server misconfiguration.';
 
 /* Fields, somewhat alphabetical */
 $_lang['bdlistings.active'] = 'Active';

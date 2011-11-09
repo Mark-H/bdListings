@@ -26,7 +26,7 @@ define('PKG_VERSION','0.9.6');
 define('PKG_RELEASE','dev1');
 
 $root = dirname(dirname(__FILE__)).'/';
-$sources= array (
+$sources = array (
     'root' => $root,
     'build' => $root .'_build/',
     'resolvers' => $root . '_build/resolvers/',
