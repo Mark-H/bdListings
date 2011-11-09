@@ -44,6 +44,28 @@ if (!$listing->get('latitude') && !$listing->get('longitude')) {
 }
 
 $result = $listing->save();
-return $result;
+if ($result !== true) {
+    $hook->addError($modx->lexicon('bdlistings.error.save'));
+    return false;
+}
+
+/* Handle file uploads */
+if (is_array($d['image'])) {
+    /* @var bdlImage $img */
+    foreach ($d['image'] as $i) {
+        $img = $modx->newObject('bdlImage',array('listing' => $listing->get('id')));
+        $response = $img->handleUpload($i,$listing->get('id'));
+        if (is_string($response)) {
+            $img->set('image',$response);
+            $img->save();
+        }
+        else {
+            $hook->addError('message',$modx->lexicon('bdlistings.error.fileupload').' '.$response['error']);
+            return false;
+        }
+    }
+}
+
+return true;
 
 ?>

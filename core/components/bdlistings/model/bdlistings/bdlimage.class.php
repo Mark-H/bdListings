@@ -64,7 +64,7 @@ class bdlImage extends xPDOSimpleObject {
 
         if ($file['size'] > $filesize) return array('error' => $this->xpdo->lexicon('bdlistings.error.filetoobig'));
         $extension = pathinfo($file['name'],PATHINFO_EXTENSION);
-        if (!in_array($extension,$exts)) return array('error' => $this->xpdo->lexicon('bdlistings.error.invalidext'));
+        if (!in_array(strtolower($extension),$exts)) return array('error' => $this->xpdo->lexicon('bdlistings.error.invalidext',array('ext' => $extension)));
 
         /* New file upload */
         $uploadPath = $this->xpdo->getOption('bdlistings.uploadpath');

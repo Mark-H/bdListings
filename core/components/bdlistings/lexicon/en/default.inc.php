@@ -42,8 +42,9 @@ $_lang['bdlistings.error.targetinvalid'] = 'The target group is invalid.';
 $_lang['bdlistings.error.invalid'] = 'Invalid request.';
 $_lang['bdlistings.error.sortinvalid'] = 'Requested sort is not valid: [[+errors]]';
 $_lang['bdlistings.error.toodeep'] = 'Category [[+id]] is nested too deep, only two levels is allowed.';
+$_lang['bdlistings.error.fileupload'] = 'File upload failed.';
 $_lang['bdlistings.error.filetoobig'] = 'File too big.';
-$_lang['bdlistings.error.invalidext'] = 'Invalid file type.';
+$_lang['bdlistings.error.invalidext'] = 'Invalid file type: [[+ext]].';
 
 /* Fields, somewhat alphabetical */
 $_lang['bdlistings.active'] = 'Active';
