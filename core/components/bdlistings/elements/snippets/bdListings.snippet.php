@@ -158,6 +158,10 @@ foreach ($collection as $listing) {
     $results[] = $modx->bdlistings->getChunk($p['tplRow'],$ta);
 }
 
+if (count($results) < 1) {
+    return $p['emptyValue'];
+}
+
 $results = implode($p['rowSeparator'],$results);
 $results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results));
 

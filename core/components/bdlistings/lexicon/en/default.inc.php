@@ -32,6 +32,7 @@ $_lang['bdlistings.calclatlong'] = 'Find Lat/Long';
 $_lang['bdlistings.calclatlong.desc'] = 'When enabled, this will make a request to Google Maps to retrieve the best latitude/longitude match based on the details you specified above. You will at least need the address or zip, as well as the city.';
 
 /* Error messages */
+$_lang['bdlistings.noresults'] = '<p>No listings found :(</p>';
 $_lang['bdlistings.error.noresults'] = 'No results found matching your criteria.';
 $_lang['bdlistings.error.object_nf'] = 'Object not found.';
 $_lang['bdlistings.error.save'] = 'Error saving object.';

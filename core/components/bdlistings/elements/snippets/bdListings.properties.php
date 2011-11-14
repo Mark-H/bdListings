@@ -40,7 +40,9 @@ return array(
     'imageSeparator' => " \n",
     'tplOuter' => 'bdListings.outer',
     'tplRow' => 'bdListings.row',
-    'tplImage' => 'bdListings.image'
+    'tplImage' => 'bdListings.image',
+
+    'emptyValue' => '[[%bdlistings.noresults? &namespace=`bdlistings`]]'
 );
 
 ?>
