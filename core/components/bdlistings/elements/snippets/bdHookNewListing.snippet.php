@@ -64,6 +64,7 @@ if (is_array($d['image'])) {
         $nr++;
     }
 
+    $order = 1;
     /* @var bdlImage $img */
     foreach ($images as $i) {
         if (!empty($i['name'])) {
@@ -71,7 +72,9 @@ if (is_array($d['image'])) {
             $response = $img->handleUpload($i,$listing->get('id'));
             if (is_string($response)) {
                 $img->set('image',$response);
+                $img->set('sortorder',$order);
                 $img->save();
+                $order++;
             }
             else {
                 $hook->addError('message',$modx->lexicon('bdlistings.error.fileupload',array('file' => $i['name'])).' '.$response['error']);
