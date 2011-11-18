@@ -2,7 +2,7 @@
 
 return array(
     'limit' => 0,
-    'start' => 0,
+    'offset' => 0,
     'sort' => '{"city": "ASC", "neighborhood": "ASC", "companyname": "ASC"}',
     'sortby' => 'title',
     'sortdir' => 'ASC',

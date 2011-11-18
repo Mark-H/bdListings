@@ -11,7 +11,9 @@ $defaults = include $corePath.'elements/snippets/bdTargets.properties.php';
 $p = array_merge($defaults,$scriptProperties);
 
 $c = $modx->newQuery('bdlTarget');
-$c->limit($p['limit'],$p['start']);
+$total = $modx->getCount('bdlTarget',$c);
+$modx->setPlaceholder('total',$total);
+$c->limit($p['limit'],$p['offset']);
 $c->sortby($p['sortby'],$p['sortdir']);
 
 $results = array();

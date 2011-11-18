@@ -11,7 +11,9 @@ $defaults = include $corePath.'elements/snippets/bdPriceGroups.properties.php';
 $p = array_merge($defaults,$scriptProperties);
 
 $c = $modx->newQuery('bdlPriceGroup');
-$c->limit($p['limit'],$p['start']);
+$total = $modx->getCount('bdlPriceGroup',$c);
+$modx->setPlaceholder('total',$total);
+$c->limit($p['limit'],$p['offset']);
 $c->sortby($p['sortby'],$p['sortdir']);
 
 $results = array();
@@ -24,6 +26,6 @@ foreach ($collection as $target) {
 }
 
 $results = implode($p['rowSeparator'],$results);
-$results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results));
+$results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results,'total' => $total));
 
 return $results;

@@ -85,7 +85,11 @@ if (!empty($p['subcategory'])) {
 if ($p['category'] > 0) $c->where(array('category' => $p['category']));
 if ($p['subcategory'] > 0) $c->where(array('subcategory' => $p['subcategory']));
 
-$c->limit($p['limit'],$p['start']);
+/* For pagination */
+$total = $modx->getCount('bdlListing',$c);
+$modx->setPlaceholder('total',$total);
+
+$c->limit($p['limit'],$p['offset']);
 
 $sort = $modx->fromJSON($p['sort']);
 if (is_array($sort)) {
@@ -167,7 +171,7 @@ if (count($results) < 1) {
 }
 
 $results = implode($p['rowSeparator'],$results);
-$results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results));
+$results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results, 'total' => $total));
 
 
 return $results;

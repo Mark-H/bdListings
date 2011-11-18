@@ -17,8 +17,9 @@ if ($p['parent'] > 0) {
 } else {
     $c->where(array('parent' => 0));
 }
-
-$c->limit($p['limit'],$p['start']);
+$total = $modx->getCount('bdlCategory',$c);
+$modx->setPlaceholder('total',$total);
+$c->limit($p['limit'],$p['offset']);
 $c->sortby($p['sortby'],$p['sortdir']);
 
 $results = array();
@@ -48,6 +49,6 @@ foreach ($collection as $category) {
 }
 
 $results = implode($p['categorySeparator'],$results);
-$results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results));
+$results = $modx->bdlistings->getChunk($p['tplOuter'],array('wrapper' => $results,'total' => $total));
 
 return $results;
