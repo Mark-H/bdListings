@@ -22,7 +22,7 @@ set_time_limit(0);
 /* define package */
 define('PKG_NAME','bdListings');
 define('PKG_NAME_LOWER',strtolower(PKG_NAME));
-define('PKG_VERSION','0.9.7');
+define('PKG_VERSION','1.0.0');
 define('PKG_RELEASE','dev1');
 
 $root = dirname(dirname(__FILE__)).'/';
