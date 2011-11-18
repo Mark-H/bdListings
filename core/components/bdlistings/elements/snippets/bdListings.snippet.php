@@ -45,7 +45,11 @@ $c->where(
 );
 
 if (!empty($p['listings'])) {
-    $listings = explode(',', $p['listings']);
+    $lTemp = explode(',', $p['listings']);
+    $listings = array();
+    foreach ($lTemp as $l) {
+        if (is_numeric($l)) $listings[] = (int)$l;
+    }
     $c->where(array('`bdlListing`.`id`:IN' => $listings));
 }
 
