@@ -1,8 +1,10 @@
 ++++++++++++++++++++++++++++++++++++
 ++                                ++
-++    bdListings 0.9.0-dev        ++
-++         Released: 25/10/2011   ++
+++    bdListings 1.0.0-pl         ++
+++         Released: 25/11/2011   ++
 ++                                ++
 ++++++++++++++++++++++++++++++++++++
+
+Initial public release of bdListings.
 
 

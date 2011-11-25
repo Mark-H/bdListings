@@ -1,10 +1,8 @@
-+++++++++++++++++++++++++++++++++++
-++                               ++
-++   bdListings                  ++
-++   Developer:  Mark Hamstra    ++
-++   License:    GPL GNU v2      ++
-++                               ++
-+++++++++++++++++++++++++++++++++++
+h1. bdListings
+
+Developed by Mark Hamstra <hello@markhamstra.com> for BD Creative <http://www.bdcreative.de/>. Licensed under the GLP v2 license.
+
+h2. About bdListings
 
 bdListings enables you to display (third party) listings for services, products, offers (ads).
 
@@ -12,6 +10,10 @@ There are no detail pages, however the link to the website (when set up properly
 
 It is possible to set up friendly URLs for the categories. See the documentation for more detailed information.
 
+h2. Links & Stuff
+
 Documentation: 		http://rtfm.modx.com/display/ADDON/bdListings
+
 Bugs & Features: 	https://github.com/Mark-H/bdListings/issues
+
 Commercial Support:	hello@markhamstra.com
