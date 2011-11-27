@@ -1,5 +1,12 @@
 This changelog shows an overview of what changed throughout releases, with the latest release or current development log on top.
 
+++++++++++++++++++++++++++++++++++++
+++                                ++
+++    bdListings 1.1.0-pl         ++
+++         Released: 27/11/2011   ++
+++                                ++
+++++++++++++++++++++++++++++++++++++
+
 #1 Create/update window fixed to properly show subcategories
 Normalize click tracking into the bdListings class.
 Add view count which counts every time the listing is displayed through the bdListings snippet.
