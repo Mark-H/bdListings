@@ -1,3 +1,8 @@
+This changelog shows an overview of what changed throughout releases, with the latest release or current development log on top.
+
+Normalize click tracking into the bdListings class.
+Add view count which counts every time the listing is displayed through the bdListings snippet.
+
 ++++++++++++++++++++++++++++++++++++
 ++                                ++
 ++    bdListings 1.0.0-pl         ++
@@ -6,5 +11,3 @@
 ++++++++++++++++++++++++++++++++++++
 
 Initial public release of bdListings.
-
-

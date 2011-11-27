@@ -93,5 +93,20 @@ class bdlListing extends xPDOSimpleObject {
             return $this->save();
         return true;
     }
+
+    /**
+     * Registers a new click for a listing.
+     *
+     * @return bool
+     */
+    function registerClick() {
+        /* @var bdlClicks $click */
+        $click = $this->xpdo->newObject('bdlClicks');
+        $click->set('listing',$this->get('id'));
+        $click->set('clicktime',date('Y-m-d H:i:s'));
+        $click->set('ipaddress',$_SERVER['REMOTE_ADDR']);
+        $click->set('referrer',$_SERVER['HTTP_REFERER']);
+        return $click->save();
+    }
 }
 ?>
