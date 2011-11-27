@@ -2,6 +2,7 @@
 bdListings.window.Listing = function(config) {
     config = config || {};
     config.isNew = (config.isNew) ? true : false;
+	config.id = Ext.id();
     Ext.applyIf(config,{
         title: _('bdlistings.listing'),
         url: bdListings.config.connector_url,
@@ -34,7 +35,7 @@ bdListings.window.Listing = function(config) {
                 layout: 'form',
                 items: [{
                     name: 'id',
-                    xtype: 'statictextfield',
+                    xtype: (config.isNew) ? 'hidden' : 'statictextfield',
                     fieldLabel: _('id'),
                     width: '98%',
                     submitValue: true
@@ -86,13 +87,6 @@ bdListings.window.Listing = function(config) {
                 title: _('bdlistings.listing.categorize'),
                 layout: 'form',
                 items: [{
-                    name: 'pricegroup',
-                    hiddenName: 'pricegroup',
-                    fieldLabel: _('bdlistings.pricegroup')+'*',
-                    xtype: 'bdlisting-combo-pricegroup',
-                    width: '92%',
-                    anchor: '0 0'
-                },{
                     name: 'category',
                     hiddenName: 'category',
                     fieldLabel: _('bdlistings.category')+'*',
@@ -101,14 +95,15 @@ bdListings.window.Listing = function(config) {
                     width: '92%',
                     anchor: '0 0',
                     allowBlank: false,
-                    id: 'bdl-win-'+this.id+'-category',
+                    id: 'bdl-win-'+config.id+'-category',
                     listeners: {
                         select: function(field, form, ri) {
                             subParent = form.store.data.items[ri].json;
-                            subC = Ext.getCmp('bdl-win-'+this.id+'-subcategory');
+                            subC = Ext.getCmp('bdl-win-'+config.id+'-subcategory');
+							subC.setValue();
                             subC.store.baseParams['parent'] = subParent.id;
-                            subC.store.reload({parent: subParent.id});
-                        }, scope: this
+                            subC.store.load({parent: subParent.id});
+                        }
                     }
                 },{
                     name: 'subcategory',
@@ -118,15 +113,22 @@ bdListings.window.Listing = function(config) {
                     allowNegative: false,
                     width: '92%',
                     anchor: '0 0',
-                    id: 'bdl-win-'+this.id+'-subcategory',
+                    id: 'bdl-win-'+config.id+'-subcategory',
                     listeners: {
                         render: function(field, form, ri) {
-                            parCat =  Ext.getCmp('bdl-win-'+this.id+'-category');
+                            parCat =  Ext.getCmp('bdl-win-'+config.id+'-category');
                             if (typeof parCat != 'undefined') {
-                                Ext.getCmp('bdl-win-'+this.id+'-subcategory').store.reload({parent: parCat.value});
+                                Ext.getCmp('bdl-win-'+config.id+'-subcategory').store.reload({parent: parCat.value});
                             }
-                        }, scope: this
+                        }
                     }
+                },{
+                    name: 'pricegroup',
+                    hiddenName: 'pricegroup',
+                    fieldLabel: _('bdlistings.pricegroup'),
+                    xtype: 'bdlisting-combo-pricegroup',
+                    width: '92%',
+                    anchor: '0 0'
                 },{
                     name: 'target',
                     hiddenName: 'target',
