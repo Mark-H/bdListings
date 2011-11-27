@@ -25,7 +25,6 @@
 
 if ($object->xpdo) {
     $modx =& $object->xpdo;
-
     $modelPath = $modx->getOption('bdlistings.core_path',null,$modx->getOption('core_path').'components/bdlistings/').'model/';
     $modx->addPackage('bdlistings',$modelPath);
 

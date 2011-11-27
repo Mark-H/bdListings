@@ -95,7 +95,8 @@ bdListings.grid.Listings = function(config) {
             {name: 'website', type: 'string'},
             {name: 'latitude', type: 'string'},
             {name: 'longitude', type: 'string'},
-            {name: 'clicks', type: 'int'}
+            {name: 'clicks', type: 'int'},
+            {name: 'views', type: 'int'}
         ],
         columns: [{
 			header: _('id'),
@@ -252,6 +253,11 @@ bdListings.grid.Listings = function(config) {
 		},{
 			header: _('bdlistings.clicks'),
 			dataIndex: 'clicks',
+			sortable: true,
+			width: 1
+		},{
+			header: _('bdlistings.views'),
+			dataIndex: 'views',
 			sortable: true,
 			width: 1
 		}]

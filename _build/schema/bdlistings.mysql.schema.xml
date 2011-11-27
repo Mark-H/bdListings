@@ -11,11 +11,13 @@
         <field key="subcategory" dbtype="int" precision="11" phptype="integer" null="true" index="fk" />
         <field key="target" dbtype="int" precision="11" phptype="integer" null="false" index="fk" /> <!-- age group -->
 
+        <field key="views" dbtype="int" precision="11" phptype="integer" null="false" default="0" index="index" />
+
         <field key="createdon" dbtype="timestamp" phptype="timestamp" null="false" default="CURRENT_TIMESTAMP" />
         <field key="publisheduntil" dbtype="timestamp" phptype="timestamp" null="true" />
 
         <field key="active" dbtype="tinyint" precision="1" phptype="boolean" default="1" null="true" />
-        <field key="featured" dbtype="tinyint" precision="1" phptype="boolean" default="1" null="true" />
+        <field key="featured" dbtype="tinyint" precision="1" phptype="boolean" default="0" null="true" />
 
         <field key="companyname" dbtype="varchar" precision="256" phptype="string" null="false" />
         <field key="contactinfo" dbtype="varchar" precision="1024" phptype="string" null="true" />

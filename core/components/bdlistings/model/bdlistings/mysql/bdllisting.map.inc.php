@@ -34,10 +34,11 @@ $xpdo_meta_map['bdlListing']= array (
     'category' => NULL,
     'subcategory' => NULL,
     'target' => NULL,
+    'views' => 0,
     'createdon' => 'CURRENT_TIMESTAMP',
     'publisheduntil' => NULL,
     'active' => 1,
-    'featured' => 1,
+    'featured' => 0,
     'companyname' => NULL,
     'contactinfo' => NULL,
     'address' => NULL,
@@ -111,6 +112,15 @@ $xpdo_meta_map['bdlListing']= array (
       'null' => false,
       'index' => 'fk',
     ),
+    'views' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '11',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
+      'index' => 'index',
+    ),
     'createdon' => 
     array (
       'dbtype' => 'timestamp',
@@ -137,7 +147,7 @@ $xpdo_meta_map['bdlListing']= array (
       'dbtype' => 'tinyint',
       'precision' => '1',
       'phptype' => 'boolean',
-      'default' => 1,
+      'default' => 0,
       'null' => true,
     ),
     'companyname' => 

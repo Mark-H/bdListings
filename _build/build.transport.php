@@ -139,6 +139,9 @@ $vehicle->resolve('file',array(
 $vehicle->resolve('php',array(
     'source' => $sources['resolvers'] . 'tables.resolver.php',
 ));
+$vehicle->resolve('php',array(
+    'source' => $sources['resolvers'] . 'dbchanges.resolver.php',
+));
 $modx->log(modX::LOG_LEVEL_INFO,'Packaged in resolvers.'); flush();
 $builder->putVehicle($vehicle);
 
