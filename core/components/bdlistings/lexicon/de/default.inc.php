@@ -15,6 +15,7 @@ $_lang['bdlistings.listings'] = 'Listings';
 $_lang['bdlistings.click'] = 'Click';
 
 $_lang['bdlistings.clicks'] = 'Clicks';
+$_lang['bdlistings.views'] = 'Views';
 
 $_lang['bdlistings.structure'] = 'Structure';
 
