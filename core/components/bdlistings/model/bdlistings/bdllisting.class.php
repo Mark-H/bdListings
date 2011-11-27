@@ -77,5 +77,21 @@ class bdlListing extends xPDOSimpleObject {
             return false;
         }
     }
+
+    /**
+     * Increases the view count for the listing by $amount (1). If $save is false, or the listing is new it doesn't save.
+     *
+     * @param bool $save Save the listing after changing the view count?
+     * @param int $amount Amount to add.
+     * @return bool True if succesful, false if not.
+     */
+    function increaseViewCount($save = true, $amount = 1) {
+        $views = (int)$this->get('views');
+        $views = $views + $amount;
+        $this->set('views',$views);
+        if ($save && !$this->isNew())
+            return $this->save();
+        return true;
+    }
 }
 ?>

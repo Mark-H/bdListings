@@ -164,6 +164,7 @@ foreach ($collection as $listing) {
     $ta['images'] = implode($p['imageSeparator'],$ta['images']);
 
     $results[] = $modx->bdlistings->getChunk($p['tplRow'],$ta);
+    $listing->increaseViewCount();
 }
 
 if (count($results) < 1) {
