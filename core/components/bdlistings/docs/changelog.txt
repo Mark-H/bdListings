@@ -2,6 +2,14 @@ This changelog shows an overview of what changed throughout releases, with the l
 
 ++++++++++++++++++++++++++++++++++++
 ++                                ++
+++    bdListings 1.1.1-pl         ++
+++         Released: 27/11/2011   ++
+++                                ++
+++++++++++++++++++++++++++++++++++++
+Add option to disable tracking views on a snippet-call basis, allowing fine tuning of what views are tracked.
+
+++++++++++++++++++++++++++++++++++++
+++                                ++
 ++    bdListings 1.1.0-pl         ++
 ++         Released: 27/11/2011   ++
 ++                                ++

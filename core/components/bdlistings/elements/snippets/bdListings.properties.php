@@ -42,7 +42,8 @@ return array(
     'tplRow' => 'bdListings.row',
     'tplImage' => 'bdListings.image',
 
-    'emptyValue' => '[[%bdlistings.noresults? &namespace=`bdlistings`]]'
+    'emptyValue' => '[[%bdlistings.noresults? &namespace=`bdlistings`]]',
+    'trackViews' => true,
 );
 
 ?>
