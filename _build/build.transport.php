@@ -22,8 +22,8 @@ set_time_limit(0);
 /* define package */
 define('PKG_NAME','bdListings');
 define('PKG_NAME_LOWER',strtolower(PKG_NAME));
-define('PKG_VERSION','1.0.0');
-define('PKG_RELEASE','pl');
+define('PKG_VERSION','1.1.0');
+define('PKG_RELEASE','rc1');
 
 $root = dirname(dirname(__FILE__)).'/';
 $sources = array (
@@ -47,7 +47,7 @@ require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
 $modx= new modX();
 $modx->initialize('mgr');
 $modx->setLogLevel(modX::LOG_LEVEL_INFO);
-$modx->setLogTarget('ECHO'); echo 'Packing '.PKG_NAME_LOWER.'-'.PKG_VERSION.'-'.PKG_RELEASE.'<pre>'; flush();
+$modx->setLogTarget('ECHO'); echo 'Packing '.PKG_NAME_LOWER.'-'.PKG_VERSION.'-'.PKG_RELEASE.'<pre>'; flush(); ob_flush();
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
@@ -61,14 +61,14 @@ $modx->getService('lexicon','modLexicon');
 $category = $modx->newObject('modCategory');
 $category->set('id',1);
 $category->set('category',PKG_NAME);
-$modx->log(modX::LOG_LEVEL_INFO,'Packaged in category.'); flush();
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in category.'); flush(); ob_flush();
 
 /* add snippets */
 $snippets = include $sources['data'].'transport.snippets.php';
 if (is_array($snippets)) {
     $category->addMany($snippets,'Snippets');
 } else { $modx->log(modX::LOG_LEVEL_FATAL,'Adding snippets failed.'); }
-$modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($snippets).' snippets.'); flush();
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($snippets).' snippets.'); flush(); ob_flush();
 unset($snippets);
 
 /* Add actions */
@@ -87,7 +87,7 @@ foreach ($settings as $setting) {
     $vehicle = $builder->createVehicle($setting,$attributes);
     $builder->putVehicle($vehicle);
 }
-$modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($settings).' system settings.'); flush();
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($settings).' system settings.'); flush(); ob_flush();
 unset($settings,$setting,$attributes);
 
 /* add plugins */
@@ -110,7 +110,7 @@ foreach ($plugins as $plugin) {
     $vehicle = $builder->createVehicle($plugin, $attributes);
     $builder->putVehicle($vehicle);
 }
-$modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($plugins).' plugins.'); flush();
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($plugins).' plugins.'); flush(); ob_flush();
 unset($plugins,$plugin,$attributes);
 
 /* create category vehicle */
@@ -142,7 +142,7 @@ $vehicle->resolve('php',array(
 $vehicle->resolve('php',array(
     'source' => $sources['resolvers'] . 'dbchanges.resolver.php',
 ));
-$modx->log(modX::LOG_LEVEL_INFO,'Packaged in resolvers.'); flush();
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in resolvers.'); flush(); ob_flush();
 $builder->putVehicle($vehicle);
 
 /* now pack in the license file, readme and setup options */
@@ -154,9 +154,9 @@ $builder->setPackageAttributes(array(
         'source' => $sources['build'].'setup.options.php',
     ),*/
 ));
-$modx->log(modX::LOG_LEVEL_INFO,'Packaged in package attributes.'); flush();
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in package attributes.'); flush(); ob_flush();
 
-$modx->log(modX::LOG_LEVEL_INFO,'Packing...'); flush();
+$modx->log(modX::LOG_LEVEL_INFO,'Packing...'); flush(); ob_flush();
 $builder->pack();
 
 $mtime = microtime();
