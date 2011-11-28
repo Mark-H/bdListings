@@ -63,6 +63,8 @@ if (!empty($p['query'])) {
         array(
             'title:LIKE' => "%$pq%",
             'OR:description:LIKE' => "%$pq%",
+            'OR:keywords:LIKE' => "%$pq%",
+            'OR:companyname:LIKE' => "%$pq%",
         )
     );
 }

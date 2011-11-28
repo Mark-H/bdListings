@@ -1,5 +1,7 @@
 This changelog shows an overview of what changed throughout releases, with the latest release or current development log on top.
 
+Extend full-text search to include keywords and the company name as well.
+
 ++++++++++++++++++++++++++++++++++++
 ++                                ++
 ++    bdListings 1.1.1-pl         ++
