@@ -75,17 +75,28 @@ if ($p['pricegroup'] > 0) $c->where(array('pricegroup' => $p['pricegroup']));
 if (!empty($p['city'])) $c->where(array('city:LIKE' => '%'.$p['city'].'%'));
 
 if (!empty($p['category'])) {
-    if (is_numeric($p['category'])) $c->where(array('category' => (int)$p['category']));
-    else $c->where(array('`Category`.`name`' => urldecode($p['category'])));
+    if (is_numeric($p['category'])) {
+        $c->where(array(
+            'category' => (int)$p['category'],
+            'OR:subcategory:=' => (int)$p['category'],
+        ));
+    }
+    else {
+        $c->where(array(
+            'Category.name' => urldecode($p['category']),
+            'OR:SubCategory.name:=' => urldecode($p['category']),
+        ));
+    }
 }
 
 if (!empty($p['subcategory'])) {
-    if (is_numeric($p['subcategory'])) $c->where(array('category' => (int)$p['subcategory']));
-    else $c->where(array('`SubCategory`.`name`' => $p['subcategory']));
+    if (is_numeric($p['subcategory'])) {
+        $c->where(array('subcategory' => (int)$p['subcategory']));
+    }
+    else {
+        $c->where(array('`SubCategory`.`name`' => $p['subcategory']));
+    }
 }
-
-if ($p['category'] > 0) $c->where(array('category' => $p['category']));
-if ($p['subcategory'] > 0) $c->where(array('subcategory' => $p['subcategory']));
 
 /* For pagination */
 $total = $modx->getCount('bdlListing',$c);
@@ -159,6 +170,7 @@ foreach ($collection as $listing) {
     if (empty($ta['primaryimage'])) {
         if (count($imgs) > 0) {
             $first = array_shift($imgs);
+            /* @var bdlImage $first */
             $ta['primaryimage'] = $first->get('image');
             $ta['primaryimagepath'] = $first->get('imagepath');
         }
