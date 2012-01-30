@@ -7,6 +7,16 @@ $dir = $modx->getOption('dir',$scriptProperties,'asc');
 
 $search = $modx->getOption('query',$scriptProperties,'');
 $parent = $modx->getOption('parent',$scriptProperties,'');
+$id = $modx->getOption('id',$scriptProperties,null);
+
+$results = array();
+if ($id) {
+    /* @var bdlCategory $obj */
+    $obj = $modx->getObject('bdlCategory',$id);
+    if ($obj instanceof bdlCategory) {
+        $results[] = $obj->toArray();
+    }
+}
 
 $c = $modx->newQuery('bdlCategory');
 
@@ -27,7 +37,6 @@ $total = $modx->getCount('bdlCategory',$c);
 $c->limit($limit,$start);
 
 $query = $modx->getCollection('bdlCategory',$c);
-$results = array();
 
 /* @var bdlCategory $r */
 foreach ($query as $r) {

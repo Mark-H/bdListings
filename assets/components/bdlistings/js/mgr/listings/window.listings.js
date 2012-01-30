@@ -103,6 +103,7 @@ bdListings.window.Listing = function(config) {
 							subC.setValue();
                             subC.store.baseParams['parent'] = subParent.id;
                             subC.store.load({parent: subParent.id});
+                            subC.enable();
                         }
                     }
                 },{
@@ -115,10 +116,15 @@ bdListings.window.Listing = function(config) {
                     anchor: '0 0',
                     id: 'bdl-win-'+config.id+'-subcategory',
                     listeners: {
-                        render: function(field, form, ri) {
-                            parCat =  Ext.getCmp('bdl-win-'+config.id+'-category');
+                        render: function(field) {
+                            var parCat =  Ext.getCmp('bdl-win-'+config.id+'-category');
                             if (typeof parCat != 'undefined') {
-                                Ext.getCmp('bdl-win-'+config.id+'-subcategory').store.reload({parent: parCat.value});
+                                if (parCat.value > 0) {
+                                    field.baseParams.parent = parCat.value;
+                                    field.store.reload({parent: parCat.value});
+                                } else {
+                                    field.disable();
+                                }
                             }
                         }
                     }
