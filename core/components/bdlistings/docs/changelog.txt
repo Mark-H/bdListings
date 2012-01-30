@@ -1,23 +1,23 @@
 This changelog shows an overview of what changed throughout releases, with the latest release or current development log on top.
 
+++++++++++++++++++++++++++++++++++++
+++    bdListings 1.1.2-pl         ++
+++         Released: 30/01/2012   ++
+++++++++++++++++++++++++++++++++++++
 Make sure requests with a category set also checks subcategories.
 Fix showing of (sub)categories when updating.
 Fix refreshing of listings grid on remove.
 Extend full-text search to include keywords and the company name as well.
 
 ++++++++++++++++++++++++++++++++++++
-++                                ++
 ++    bdListings 1.1.1-pl         ++
 ++         Released: 27/11/2011   ++
-++                                ++
 ++++++++++++++++++++++++++++++++++++
 Add option to disable tracking views on a snippet-call basis, allowing fine tuning of what views are tracked.
 
 ++++++++++++++++++++++++++++++++++++
-++                                ++
 ++    bdListings 1.1.0-pl         ++
 ++         Released: 27/11/2011   ++
-++                                ++
 ++++++++++++++++++++++++++++++++++++
 
 #1 Create/update window fixed to properly show subcategories
@@ -25,10 +25,8 @@ Normalize click tracking into the bdListings class.
 Add view count which counts every time the listing is displayed through the bdListings snippet.
 
 ++++++++++++++++++++++++++++++++++++
-++                                ++
 ++    bdListings 1.0.0-pl         ++
 ++         Released: 25/11/2011   ++
-++                                ++
 ++++++++++++++++++++++++++++++++++++
 
 Initial public release of bdListings.
