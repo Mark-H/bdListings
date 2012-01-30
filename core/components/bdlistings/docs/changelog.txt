@@ -1,5 +1,6 @@
 This changelog shows an overview of what changed throughout releases, with the latest release or current development log on top.
 
+Fix refreshing of listings grid on remove.
 Extend full-text search to include keywords and the company name as well.
 
 ++++++++++++++++++++++++++++++++++++

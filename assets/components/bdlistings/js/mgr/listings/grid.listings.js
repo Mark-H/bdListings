@@ -315,9 +315,9 @@ Ext.extend(bdListings.grid.Listings,MODx.grid.Grid,{
                         id: d['id']
                     },
                     listeners: {
-                        'success': function (r) {
+                        'success': {fn: function (r) {
                             Ext.getCmp('grid-listings').refresh();
-                        }, scope: this
+                        }, scope: this}
                     }
                 });
             }
