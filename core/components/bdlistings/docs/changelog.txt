@@ -1,5 +1,7 @@
 This changelog shows an overview of what changed throughout releases, with the latest release or current development log on top.
 
+Make sure the website field prefixes http:// to prevent breaking the redirect urls.
+
 ++++++++++++++++++++++++++++++++++++
 ++    bdListings 1.1.2-pl         ++
 ++         Released: 30/01/2012   ++

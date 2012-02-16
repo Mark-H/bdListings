@@ -55,7 +55,14 @@ bdListings.window.Listing = function(config) {
                     name: 'website',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.website'),
-                    width: '98%'
+                    width: '98%',
+                    listeners: {
+                        change: function (field, newValue) {
+                            if ((newValue != '') && (newValue.substr(0,4) != 'http') && (newValue.substr(0,2) != '[[')) {
+                                field.setValue('http://'+newValue);
+                            }
+                        }
+                    }
                 },{
                     name: 'description',
                     hiddenName: 'description',
