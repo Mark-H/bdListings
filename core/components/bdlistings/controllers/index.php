@@ -36,8 +36,8 @@ $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/bdlistings.clas
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/action.index.js');
 
 /* Listings */
-$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/grid.listings.js');
-$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/window.listings.js');
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/grid.listings.js?v=113');
+$modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/window.listings.js?v=113');
 $modx->regClientStartupScript($bdlistings->config['js_url'].'mgr/listings/combo.listings.js');
 
 /* Clicks */
