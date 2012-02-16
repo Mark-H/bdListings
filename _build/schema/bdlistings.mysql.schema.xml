@@ -18,6 +18,7 @@
 
         <field key="active" dbtype="tinyint" precision="1" phptype="boolean" default="1" null="true" />
         <field key="featured" dbtype="tinyint" precision="1" phptype="boolean" default="0" null="true" />
+        <field key="extended" dbtype="tinyint" precision="1" phptype="boolean" default="0" null="true" />
 
         <field key="companyname" dbtype="varchar" precision="256" phptype="string" null="false" />
         <field key="contactinfo" dbtype="varchar" precision="1024" phptype="string" null="true" />

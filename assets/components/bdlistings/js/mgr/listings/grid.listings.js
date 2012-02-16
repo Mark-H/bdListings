@@ -83,6 +83,7 @@ bdListings.grid.Listings = function(config) {
             {name: 'publisheduntil', type: 'date', dateFormat: MODx.config['manager_date_format']+' '+MODx.config['manager_time_format']},
             {name: 'active', type: 'boolean'},
             {name: 'featured', type: 'boolean'},
+            {name: 'extended', type: 'boolean'},
             {name: 'companyname', type: 'string'},
             {name: 'contactinfo', type: 'string'},
             {name: 'address', type: 'string'},

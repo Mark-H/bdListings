@@ -11,6 +11,7 @@ if ($object->xpdo) {
             $modx->log(xPDO::LOG_LEVEL_WARN,'Making database changes - if this is a clean install or you have run this installer before you may get some (harmless) errors below.');
             $manager->addField('bdlListing','views');
             $manager->alterField('bdlListing','featured');
+            $manager->addField('bdlListing','extended');
 
             break;
     }

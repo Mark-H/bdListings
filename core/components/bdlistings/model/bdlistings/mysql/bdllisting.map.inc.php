@@ -39,6 +39,7 @@ $xpdo_meta_map['bdlListing']= array (
     'publisheduntil' => NULL,
     'active' => 1,
     'featured' => 0,
+    'extended' => 0,
     'companyname' => NULL,
     'contactinfo' => NULL,
     'address' => NULL,
@@ -143,6 +144,14 @@ $xpdo_meta_map['bdlListing']= array (
       'null' => true,
     ),
     'featured' => 
+    array (
+      'dbtype' => 'tinyint',
+      'precision' => '1',
+      'phptype' => 'boolean',
+      'default' => 0,
+      'null' => true,
+    ),
+    'extended' => 
     array (
       'dbtype' => 'tinyint',
       'precision' => '1',

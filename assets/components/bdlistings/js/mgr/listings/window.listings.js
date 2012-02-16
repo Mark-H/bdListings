@@ -19,7 +19,7 @@ bdListings.window.Listing = function(config) {
             autoHeight: true,
             deferredRender: false,
             forceLayout: true,
-            width: '98%',
+            anchor: '100%',
             bodyStyle: 'padding: 10px 10px 10px 10px;',
             border: true,
             defaults: {
@@ -37,25 +37,25 @@ bdListings.window.Listing = function(config) {
                     name: 'id',
                     xtype: (config.isNew) ? 'hidden' : 'statictextfield',
                     fieldLabel: _('id'),
-                    width: '98%',
+                    anchor: '100%',
                     submitValue: true
                 },{
                     name: 'title',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.title')+'*',
                     allowBlank: false,
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'price',
                     fieldLabel: _('bdlistings.price')+'*',
                     xtype: 'numberfield',
                     allowNegative: false,
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'website',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.website'),
-                    width: '98%',
+                    anchor: '100%',
                     listeners: {
                         change: function (field, newValue) {
                             if ((newValue != '') && (newValue.substr(0,4) != 'http') && (newValue.substr(0,2) != '[[')) {
@@ -74,7 +74,7 @@ bdListings.window.Listing = function(config) {
                     enableLinks: true,
                     enableColors: false,
                     enableAlignment: false,
-                    width: '99%',
+                    anchor: '100%',
                     height: 125
                 },{
                     name: 'publisheduntil',
@@ -83,12 +83,17 @@ bdListings.window.Listing = function(config) {
                     anchor: '0 0'
                 },{
                     name: 'active',
-                    fieldLabel: _('bdlistings.active'),
+                    boxLabel: _('bdlistings.active'),
                     xtype: 'checkbox'
                 },{
                     name: 'featured',
-                    fieldLabel: _('bdlistings.featured'),
+                    boxLabel: _('bdlistings.featured'),
                     xtype: 'checkbox'
+                },{
+                    name: 'extended',
+                    boxLabel: _('bdlistings.extended'),
+                    description: _('bdlistings.extended.desc'),
+                    xtype: (bdListings.config.show_extended) ? 'checkbox' : 'hidden'
                 }]
             },{
                 title: _('bdlistings.listing.categorize'),
@@ -99,7 +104,6 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.category')+'*',
                     xtype: 'bdlisting-combo-category',
                     allowNegative: false,
-                    width: '92%',
                     anchor: '0 0',
                     allowBlank: false,
                     id: 'bdl-win-'+config.id+'-category',
@@ -119,7 +123,6 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.subcategory'),
                     xtype: 'bdlisting-combo-category',
                     allowNegative: false,
-                    width: '92%',
                     anchor: '0 0',
                     id: 'bdl-win-'+config.id+'-subcategory',
                     listeners: {
@@ -140,7 +143,6 @@ bdListings.window.Listing = function(config) {
                     hiddenName: 'pricegroup',
                     fieldLabel: _('bdlistings.pricegroup'),
                     xtype: 'bdlisting-combo-pricegroup',
-                    width: '92%',
                     anchor: '0 0'
                 },{
                     name: 'target',
@@ -148,14 +150,13 @@ bdListings.window.Listing = function(config) {
                     fieldLabel: _('bdlistings.target'),
                     xtype: 'bdlisting-combo-targetgroup',
                     allowNegative: false,
-                    width: '92%',
                     anchor: '0 0'
                 },{
                     name: 'keywords',
                     fieldLabel: _('bdlistings.keywords'),
                     xtype: 'textfield',
                     allowNegative: false,
-                    width: '98%'
+                    anchor: '100%'
                 }]
             },{
                 title: _('bdlistings.listing.location'),
@@ -164,63 +165,64 @@ bdListings.window.Listing = function(config) {
                     name: 'companyname',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.companyname')+'*',
-                    width: '98%',
+                    anchor: '100%',
                     allowBlank: false
                 },{
                     name: 'contactinfo',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.contactinfo'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'phone',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.phone'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'email',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.email'),
-                    width: '98%'
+                    anchor: '100%',
+                    vtype: 'email'
                 },{
                     name: 'address',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.address'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'neighborhood',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.neighborhood'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'zip',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.zip'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'city',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.city'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'country',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.country'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'calclatlong',
                     xtype: 'checkbox',
-                    fieldLabel: _('bdlistings.calclatlong'),
+                    boxLabel: _('bdlistings.calclatlong'),
                     description: _('bdlistings.calclatlong.desc')
                 },{
                     name: 'latitude',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.latitude'),
-                    width: '98%'
+                    anchor: '100%'
                 },{
                     name: 'longitude',
                     xtype: 'textfield',
                     fieldLabel: _('bdlistings.longitude'),
-                    width: '98%'
+                    anchor: '100%'
                 }]
             },{
                 title: _('bdlistings.listing.images'),

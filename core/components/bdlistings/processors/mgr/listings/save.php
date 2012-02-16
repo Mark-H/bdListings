@@ -19,6 +19,7 @@ $d = $scriptProperties;
 $d['publisheduntil'] = date('Y-m-d H:i:s',strtotime($d['publisheduntil']));
 $d['active'] = ($d['active'] == 'on') ? true : false;
 $d['featured'] = ($d['featured'] == 'on') ? true : false;
+$d['extended'] = ($d['extended'] == 'on') ? true : false;
 
 $listing->fromArray($d);
 

@@ -51,6 +51,7 @@ class bdListings {
             'css_url' => $assetsUrl.'css/',
             'assets_url' => $assetsUrl,
             'connector_url' => $assetsUrl.'connector.php',
+            'show_extended' => (bool)$modx->getOption('bdlistings.showExtendedCheckbox',$config,$modx->getOption('bdlistings.showExtendedCheckbox',null,true)),
         ),$config);
 
         $this->modx->addPackage('bdlistings',$this->config['model_path']);

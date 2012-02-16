@@ -11,6 +11,7 @@ bdListings.page.Index = function(config) {
     config = config || {};
     Ext.applyIf(config,{
         renderTo: 'bdlistings',
+        cls: 'container',
         components: [{
             xtype: 'bdlistings-panel-header'
         },{

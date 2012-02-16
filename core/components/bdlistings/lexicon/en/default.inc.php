@@ -96,5 +96,8 @@ $_lang['bdlistings.title'] = 'Title';
 $_lang['bdlistings.website'] = 'Website';
 $_lang['bdlistings.zip'] = 'Zip';
 
+$_lang['bdlistings.extended'] = 'Extended';
+$_lang['bdlistings.extended.desc'] = 'When marking this listing as extended, the listing may be treated differently on the website if it has been set up that way by your developer.';
+
 
 ?>

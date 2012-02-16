@@ -1,6 +1,7 @@
 <?php
 $s = array(
     'categoryresource' => 0,
+    'showExtendedCheckbox' => true,
 );
 
 $settings = array();
