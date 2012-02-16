@@ -18,6 +18,9 @@ if ($id > 0) {
 
     $url = $listing->get('website');
     if (!empty($url)) {
+        if (substr($url,0,4) != 'http') {
+            $url = 'http://'.$url;
+        }
         $listing->registerClick();
 
         /* Redirect the user */
