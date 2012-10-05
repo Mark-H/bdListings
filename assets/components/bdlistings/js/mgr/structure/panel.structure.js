@@ -131,7 +131,7 @@ Ext.extend(bdListings.tree.Structure,MODx.tree.Tree,{
                 listeners: {
                     'success':{fn: function(r) {
                          Ext.getCmp('bdlistings-tree-structure').refresh();
-                    },scope:true}
+                    },scope:this}
                 }
             });
         }

@@ -29,6 +29,7 @@ $modx->regClientStartupHTMLBlock('
 <script type="text/javascript">
     Ext.onReady(function() {
         bdListings.config = '.$modx->toJSON($bdlistings->config).';
+        Ext.chart.Chart.CHART_URL = "'.$bdlistings->config['assets_url'].'swf/charts.swf";
     });
 </script>');
 
